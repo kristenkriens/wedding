@@ -1,0 +1,16 @@
+@import '../../../../shared/styles/variables';
+
+button.link {
+	color: $grey-blue;
+	text-decoration: underline;
+
+	&[disabled] {
+		color: $grey;
+	}
+
+	&:not([disabled]) {
+		&:hover, &:active, &:focus {
+	    color: $blurple;
+	  }
+	}
+}

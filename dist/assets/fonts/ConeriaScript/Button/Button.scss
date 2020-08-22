@@ -1,0 +1,62 @@
+@import '../../../shared/styles/variables';
+
+.button {
+	display: inline-block;
+	background-color: $grey-blue;
+	color: $white;
+	border: none;
+	outline: none;
+	border-radius: 0;
+	padding: 10px 20px;
+	font-size: 20px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+  text-align: center;
+
+	&:not([disabled]) {
+		&:hover, &:active, &:focus {
+			background-color: $blurple;
+		}
+	}
+
+	&[disabled] {
+		background-color: $grey;
+	}
+
+	span + .fa {
+		margin-left: 8px;
+		margin-right: -2px;
+	}
+}
+
+.button-wrapper {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+  margin: -10px;
+
+  button, .button {
+    margin: 10px;
+  }
+
+	@media (max-width: $sm-width) {
+		justify-content: center;
+	}
+
+	&--center {
+		justify-content: center;
+	}
+
+	&--inline {
+		width: auto;
+		display: inline-flex;
+
+		&-left {
+			@media (max-width: $sm-width) {
+				justify-content: flex-start;
+			}
+		}
+	}
+}
