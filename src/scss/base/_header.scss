@@ -1,0 +1,251 @@
+.header {
+	height: 65px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 20;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: $gutter-half $gutter;
+	transition: 300ms all;
+
+	@include media($max: $breakpoint-medium) {
+		height: 55px;
+		padding: $gutter-half;
+	}
+
+	&.is-scrolled, &.is-open {
+		a, button {
+			color: $grey;
+		}
+
+		.hamburger > div {
+			background-color: $grey;
+		}
+	}
+
+	&.is-scrolled {
+		background-color: $white;
+		box-shadow: 0 0 10px rgba($black, 0.05);
+
+		ul li {
+			&:not(:last-of-type):after {
+				background-color: $light-grey;
+			}
+
+			a.is-active:after {
+				opacity: 1;
+			}
+		}
+	}
+
+	&.is-open {
+		@include media($max: $breakpoint-medium) {
+			.header__toggle {
+				.closed {
+					display: none;
+				}
+
+				.opened {
+					display: block;
+				}
+
+				.hamburger {
+					div {
+		  			opacity: 0;
+
+		  			&:first-of-type {
+		  				display: block;
+		  				transform: translate(-50%, 7px) rotate(45deg);
+		  				opacity: 1;
+		  			}
+
+		  			&:last-of-type {
+		  				display: block;
+		  				transform: translate(-50%, -7px) rotate(-45deg);
+		  				opacity: 1;
+		  			}
+					}
+				}
+			}
+
+			nav {
+				right: 0;
+			}
+
+			.header__overlay {
+				opacity: 1;
+				pointer-events: all;
+			}
+		}
+	}
+
+	a, button {
+		color: $white;
+		font-family: $heading;
+		text-transform: uppercase;
+		padding: 10px;
+	}
+
+	&__overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba($dark-grey, 0.5);
+		opacity: 0;
+		pointer-events: none;
+		z-index: 20;
+		transition: 300ms opacity;
+	}
+
+	&__toggle {
+		display: none;
+
+		@include media($max: $breakpoint-medium) {
+			display: inline-flex;
+			justify-content: flex-end;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			z-index: 40;
+			padding: 20px !important;
+		}
+
+		.opened {
+			display: none;
+		}
+
+		.hamburger {
+			position: relative;
+			width: 22px;
+			height: 16px;
+			margin-left: 10px;
+
+			> div {
+	  		display: block;
+	  		width: 100%;
+	  		height: 2px;
+	  		background-color: $white;
+	  		position: absolute;
+				top: 50%;
+	  		left: 50%;
+	      transform: translateX(-50%);
+				margin-top: -1px;
+	  		transition: 300ms all;
+
+	  		&:first-of-type {
+	  			top: 0;
+					margin-top: 0;
+	  		}
+
+	  		&:last-of-type {
+					top: auto;
+	  			bottom: 0;
+					margin-top: 0;
+	  		}
+	  	}
+		}
+	}
+
+	nav {
+		margin: 0 -10px;
+
+		@include media($max: $breakpoint-medium) {
+			position: absolute;
+			top: 0;
+			right: -100%;
+			width: 100%;
+			max-width: 480px;
+			height: 100vh;
+			background-color: $white;
+			padding: calc(#{$gutter} + 55px) $gutter-half $gutter;
+			margin: 0;
+			text-align: center;
+			overflow-y: auto;
+			overflow-x: hidden;
+			z-index: 30;
+			transition: 300ms right;
+
+			&::-webkit-scrollbar {
+			  display: none;
+			}
+		}
+	}
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		@include listreset;
+
+		@include media($max: $breakpoint-medium) {
+			display: block;
+		}
+
+		li {
+			position: relative;
+
+			&:not(:last-of-type) {
+				margin-right: 25px;
+
+				@include media($max: $breakpoint-medium) {
+					margin-right: 15px;
+				}
+
+				@include media($max: $breakpoint-medium) {
+					margin-right: 0;
+					margin-bottom: 25px;
+				}
+
+				&:after {
+					content: '';
+					position: absolute;
+					top: 50%;
+					right: -15px;
+					transform: translateY(-50%);
+					width: 5px;
+					height: 5px;
+					background-color: $white;
+					border-radius: 50%;
+					opacity: 0.35;
+					transition: background-color 300ms;
+
+					@include media($max: $breakpoint-medium) {
+						right: -10px;
+					}
+
+					@include media($max: $breakpoint-medium) {
+						display: none;
+					}
+				}
+			}
+
+			a {
+				position: relative;
+
+				&:after {
+					content: '';
+					position: absolute;
+					bottom: 5px;
+					left: 10px;
+					right: 10px;
+					height: 2px;
+					background-color: $accent;
+					opacity: 0;
+					transition: opacity 300ms;
+				}
+
+				@include media($max: $breakpoint-medium) {
+					font-size: 20px;
+				}
+		  }
+		}
+	}
+}

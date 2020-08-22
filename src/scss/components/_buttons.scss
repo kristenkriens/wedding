@@ -1,0 +1,40 @@
+.button, input[type="button"], input[type="submit"] {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px 20px;
+  min-height: 45px;
+  text-align: center;
+  font-family: $heading;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: $light-grey;
+  border: 1px solid rgba($grey, 0.35);
+
+  @include hover {
+    background-color: rgba($grey, 0.35);
+    border-color: transparent;
+    color: $white;
+  }
+
+  @include media($max: $breakpoint-medium) {
+    font-size: 15px;
+  }
+
+  .content + & {
+    margin-top: 20px;
+  }
+}
+
+.button-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 calc(#{$gutter-half} * -1) calc(#{$gutter} * -1);
+
+  .button, input[type="button"], input[type="submit"], .link {
+    margin: 0 $gutter-half $gutter;
+  }
+}

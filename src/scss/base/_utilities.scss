@@ -1,0 +1,268 @@
+.accessible {
+	position: absolute !important;
+	clip: rect(0, 0, 0, 0);
+	overflow: hidden;
+	border: 0 none !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px;
+}
+
+.no-scroll {
+	overflow-y: hidden;
+}
+
+.dark {
+	background-color: $dark-grey;
+	color: $white;
+
+	.title h2 {
+		color: $white;
+	}
+
+	a, .button {
+		color: $white;
+	}
+
+	.button {
+		border: 1px solid $grey;
+
+	  @include hover {
+	    background-color: $grey;
+		}
+  }
+}
+
+.has-background-pattern {
+  position: relative;
+
+	.background-image {
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.row {
+		position: relative;
+		z-index: 10;
+	}
+}
+
+.has-background-image {
+  position: relative;
+	height: 100%;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($grey, 0.25);
+		outline: 2px solid rgba($white, 0.85);
+    outline-offset: calc(calc(#{$neg-gutter-quarter} / 2) - 2px);
+  }
+
+	.row {
+		position: relative;
+		z-index: 10;
+	}
+}
+
+.full-left {
+	@include media($min: $breakpoint-xxlarge + 1px) {
+		margin-left: calc((var(--width) - #{$breakpoint-xxlarge}) / -2);
+	}
+}
+
+.full-right {
+	@include media($min: $breakpoint-xxlarge + 1px) {
+		margin-right: calc((var(--width) - #{$breakpoint-xxlarge}) / -2);
+	}
+}
+
+.full {
+	@include media($min: $breakpoint-xxlarge + 1px) {
+		margin-left: calc((var(--width) - #{$breakpoint-xxlarge}) / -2);
+		margin-right: calc((var(--width) - #{$breakpoint-xxlarge}) / -2);
+	}
+}
+
+.hidden {
+	@include hidden();
+}
+
+.visible {
+	@include visible();
+}
+
+.desktop {
+	@include media($max: $breakpoint-medium) {
+		display: none;
+	}
+}
+
+.mobile {
+	display: none;
+
+	@include media($max: $breakpoint-medium) {
+		display: block;
+	}
+}
+
+.justify-start {
+	display: flex;
+	justify-content: flex-start;
+
+	&-large-down {
+		@include media($max: $breakpoint-large) {
+			display: flex;
+			justify-content: flex-start;
+		}
+	}
+
+	&-medium-down {
+		@include media($max: $breakpoint-medium) {
+			display: flex;
+			justify-content: flex-start !important;
+		}
+	}
+
+	&-small-down {
+		@include media($max: $breakpoint-small) {
+			display: flex;
+			justify-content: flex-start !important;
+		}
+	}
+}
+
+.justify-center {
+	display: flex;
+	justify-content: center;
+
+	&-large-down {
+		@include media($max: $breakpoint-large) {
+			display: flex;
+			justify-content: center !important;
+		}
+	}
+
+	&-medium-down {
+		@include media($max: $breakpoint-medium) {
+			display: flex;
+			justify-content: center !important;
+		}
+	}
+
+	&-small-down {
+		@include media($max: $breakpoint-small) {
+			display: flex;
+			justify-content: center !important;
+		}
+	}
+}
+
+.justify-end {
+	display: flex;
+	justify-content: flex-end;
+
+	&-large-down {
+		@include media($max: $breakpoint-large) {
+			display: flex;
+			justify-content: flex-end !important;
+		}
+	}
+
+	&-medium-down {
+		@include media($max: $breakpoint-medium) {
+			display: flex;
+			justify-content: flex-end !important;
+		}
+	}
+
+	&-small-down {
+		@include media($max: $breakpoint-small) {
+			display: flex;
+			justify-content: flex-end !important;
+		}
+	}
+}
+
+.align-start {
+	display: flex;
+	align-items: flex-start;
+
+	&-large-down {
+		@include media($max: $breakpoint-large) {
+			display: flex;
+			align-items: flex-start !important;
+		}
+	}
+
+	&-medium-down {
+		@include media($max: $breakpoint-medium) {
+			display: flex;
+			align-items: flex-start !important;
+		}
+	}
+
+	&-small-down {
+		@include media($max: $breakpoint-small) {
+			display: flex;
+			align-items: flex-start !important;
+		}
+	}
+}
+
+.align-center {
+	display: flex;
+	align-items: center;
+
+	&-large-down {
+		@include media($max: $breakpoint-large) {
+			display: flex;
+			align-items: center !important;
+		}
+	}
+
+	&-medium-down {
+		@include media($max: $breakpoint-medium) {
+			display: flex;
+			align-items: center !important;
+		}
+	}
+
+	&-small-down {
+		@include media($max: $breakpoint-small) {
+			display: flex;
+			align-items: center !important;
+		}
+	}
+}
+
+.align-end {
+	display: flex;
+	align-items: flex-end;
+
+	&-large-down {
+		@include media($max: $breakpoint-large) {
+			display: flex;
+			align-items: flex-end !important;
+		}
+	}
+
+	&-medium-down {
+		@include media($max: $breakpoint-medium) {
+			display: flex;
+			align-items: flex-end !important;
+		}
+	}
+
+	&-small-down {
+		@include media($max: $breakpoint-small) {
+			display: flex;
+			align-items: flex-end !important;
+		}
+	}
+}

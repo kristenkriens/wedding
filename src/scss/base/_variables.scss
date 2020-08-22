@@ -1,0 +1,35 @@
+// Colours
+$black: #000;
+$dark-grey: #595959;
+$grey: #898989;
+$light-grey: #a9a9a9;
+$off-white: #fafafa;
+$white: #fff;
+$accent: var(--accent);
+$accent-2: var(--accent-2);
+$accent-3: var(--accent-3);
+$accent-4: var(--accent-4);
+
+// Fonts
+$base: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+$heading: 'Cinzel', 'Times New Roman', serif;
+$display: 'Great Vibes', cursive;
+$icon: 'Fashion';
+
+// Gutters
+$gutter: 40px;
+$gutter-double: calc(#{$gutter} * 2);
+$gutter-half: calc(#{$gutter} / 2);
+$gutter-quarter: calc(#{$gutter} / 4);
+$neg-gutter: calc(#{$gutter} * -1);
+$neg-gutter-double: calc(#{$gutter-double} * -1);
+$neg-gutter-half: calc(#{$gutter-half} * -1);
+$neg-gutter-quarter: calc(#{$gutter-quarter} * -1);
+
+// Breakpoints
+$breakpoint-xsmall: 320px;
+$breakpoint-small: 480px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 960px;
+$breakpoint-xlarge: 1200px;
+$breakpoint-xxlarge: 1350px;

@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --width: 0;
+}
+
+::selection {
+  background: $accent;
+}
+
+body {
+  font-family: $base;
+  color: $light-grey;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 300;
+  overflow-x: hidden;
+  opacity: 0;
+  transition: 1500ms opacity;
+
+  &.ready {
+    opacity: 1;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.skipnav {
+	&:focus, &:active {
+		position: absolute !important;
+		top: 5px !important;
+		left: 42% !important;
+		width: 16%;
+		background-color: $black;
+		padding: 10px;
+		color: $white;
+		z-index: 9999;
+		text-align: center;
+		clip: inherit;
+		overflow: hidden;
+		border: 0 none !important;
+		width: auto !important;
+		height: auto !important;
+		margin: inherit;
+	}
+}

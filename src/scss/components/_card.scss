@@ -1,0 +1,18 @@
+.card {
+  background-color: $white;
+  padding: $gutter;
+  text-align: center;
+  height: 100%;
+  outline: 2px solid $accent;
+  outline-offset: calc(calc(#{$neg-gutter-quarter} / 2) - 2px);
+
+  &--bordered {
+    border: $gutter-half solid $accent;
+    outline-offset: calc(#{$neg-gutter-half} + calc(calc(#{$neg-gutter-quarter} / 2) - 2px));
+  }
+
+  .title:after {
+		left: 50%;
+    transform: translateX(-50%);
+	}
+}

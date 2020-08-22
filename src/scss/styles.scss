@@ -1,0 +1,25 @@
+// Base
+@import 'base/variables';
+@import 'base/normalize';
+@import 'base/mixins';
+@import 'base/utilities';
+@import 'base/fonts';
+@import 'base/main';
+@import 'base/typography';
+@import 'base/animations';
+@import 'base/forms';
+@import 'base/sliders';
+@import 'base/images';
+@import 'base/header';
+@import 'base/footer';
+
+// Vendor
+@import 'vendor/foundation';
+@import 'vendor/slick';
+
+// Components
+@import 'components/buttons';
+@import 'components/card';
+
+// Layouts
+@import 'layouts/home';

@@ -1,0 +1,43 @@
+@mixin hover {
+  &:hover, &:active, &:focus {
+    @content;
+  }
+}
+
+@mixin hidden {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@mixin visible {
+  position: static;
+  opacity: 1;
+  pointer-events: all;
+  z-index: 0;
+}
+
+@mixin listreset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Breakpoint Mixin
+@mixin media($min: 0, $max: 0) {
+  $point: type-of($min);
+  $query: 'all' !default;
+  @if $min != 0 and $max != 0 {
+    $query: '(min-width: #{$min}) and (max-width: #{$max})';
+  }
+  @else if $min != 0 and $max == 0 {
+    $query: '(min-width: #{$min})';
+  }
+  @else if $min == 0 and $max != 0 {
+    $query: '(max-width: #{$max})';
+  }
+  @media #{$query} {
+    @content;
+  }
+}

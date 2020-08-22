@@ -1,0 +1,28 @@
+.footer {
+  padding: 30px 0;
+  text-align: center;
+
+  @include media($max: $breakpoint-medium) {
+    padding: 25px 0;
+  }
+
+  .h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .heart {
+    height: 30px;
+    width: 30px;
+    margin: 0 30px;
+    fill: $accent;
+
+    @include media($max: $breakpoint-medium) {
+      height: 25px;
+      width: 25px;
+      margin: 0 20px;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+input:not([type="button"]), input:not([type="submit"]), select, textarea {
+  background-color: transparent;
+  font-weight: normal;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 30px $white inset !important;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  @extend .accessible;
+
+  + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      border: 1px solid $black;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 15px;
+      height: 15px;
+      opacity: 0;
+      transition: 300ms opacity;
+    }
+  }
+
+  &:checked {
+    + label {
+      &:after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+input[type="radio"] {
+  + label {
+    &:before {
+      border-radius: 50%;
+    }
+
+    &:after {
+      background-color: $black;
+      border-radius: 50%;
+    }
+  }
+}
+
+input[type="checkbox"] {
+  + label {
+    &:after {
+      background-image: url('../../images/checkmark.svg');
+      background-position: center;
+      background-size: 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
