@@ -12,15 +12,14 @@
 	overflow-y: hidden;
 }
 
-.dark {
-	background-color: $dark-grey;
+.bg-light-grey, .bg-dark-grey {
 	color: $white;
 
 	.title h2 {
 		color: $white;
 	}
 
-	a, .button {
+	a, button {
 		color: $white;
 	}
 
@@ -31,10 +30,29 @@
 	    background-color: $grey;
 		}
   }
+
+	.faqs__item {
+		border-bottom: 1px solid $white !important;
+
+		button {
+			&:before, &:after {
+				background-color: $white !important;
+			}
+		}
+	}
 }
 
-.has-background-pattern {
+.bg-light-grey {
+	background-color: $light-grey;
+}
+
+.bg-dark-grey {
+	background-color: $dark-grey;
+}
+
+.has-background-image {
   position: relative;
+	height: 100%;
 
 	.background-image {
 		background-attachment: fixed;
@@ -48,9 +66,8 @@
 	}
 }
 
-.has-background-image {
-  position: relative;
-	height: 100%;
+.has-white-outline {
+	position: relative;
 
   &:after {
     content: '';
@@ -63,11 +80,6 @@
 		outline: 2px solid rgba($white, 0.85);
     outline-offset: calc(calc(#{$neg-gutter-quarter} / 2) - 2px);
   }
-
-	.row {
-		position: relative;
-		z-index: 10;
-	}
 }
 
 .full-left {

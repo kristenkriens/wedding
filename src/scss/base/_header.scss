@@ -30,8 +30,8 @@
 		background-color: $white;
 		box-shadow: 0 0 10px rgba($black, 0.05);
 
-		ul li {
-			&:not(:last-of-type):after {
+		nav {
+			li:not(:last-of-type):after {
 				background-color: $light-grey;
 			}
 
@@ -73,6 +73,10 @@
 
 			nav {
 				right: 0;
+
+				a.is-active:after {
+					opacity: 1;
+				}
 			}
 
 			.header__overlay {
@@ -80,11 +84,23 @@
 				pointer-events: all;
 			}
 		}
+
+		&:not(.is-scrolled) {
+			@include media($min: $breakpoint-medium + 1px) {
+				a, button {
+					color: $white;
+				}
+
+				.hamburger > div {
+					background-color: $white;
+				}
+			}
+		}
 	}
 
 	a, button {
 		color: $white;
-		font-family: $heading;
+		font-family: $display;
 		text-transform: uppercase;
 		padding: 10px;
 	}

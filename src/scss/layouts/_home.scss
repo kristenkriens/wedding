@@ -12,6 +12,12 @@
       padding-top: $gutter;
       padding-bottom: $gutter;
     }
+
+    > .row > .column:not(:last-of-type) {
+      @include media($max: $breakpoint-medium) {
+        margin-bottom: $gutter-half;
+      }
+    }
   }
 
   .hero {
@@ -64,7 +70,7 @@
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 10;
+        z-index: 20;
         opacity: 0.5;
 
         @include hover {
@@ -91,9 +97,11 @@
     }
 
     &__content {
+      position: relative;
       text-align: center;
       max-width: $breakpoint-xlarge;
       margin: 50px auto 0;
+      z-index: 10;
 
       @include media($min: $breakpoint-medium + 1px) {
         width: calc(100% - #{$gutter} - #{$gutter-half});
@@ -119,142 +127,17 @@
     }
   }
 
-  .countdown {
-    display: flex;
-    align-items: center;
-    color: $white;
-    padding: 0;
-
-    .row {
-      padding: 0;
-    }
-
-    .column {
-      display: flex;
-      flex-wrap: wrap;
-      align-content: center;
-
-      @include media($max: $breakpoint-medium) {
-        justify-content: center;
-      }
-
-      .row {
-        width: calc(100% + #{$gutter});
-
-        @include media($max: $breakpoint-medium) {
-          width: calc(100% + #{$gutter-half});
-        }
-      }
-    }
-
-    .h4 {
-      margin-bottom: 10px;
-    }
-
-    &__title, &__content {
-      position: relative;
-
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: calc((var(--width) - #{$breakpoint-xxlarge}) / 2);
-      }
-    }
-
-    &__title {
-      background-color: $dark-grey;
-      padding: 35px $gutter-half 30px $gutter;
-
-      @include media($max: $breakpoint-medium) {
-        padding: 25px $gutter-quarter 23px $gutter-half;
-        text-align: center;
-      }
-
-      &:after {
-        right: 100%;
-        background-color: $dark-grey;
-      }
-    }
-
-    &__content {
-      &:after {
-        left: 100%;
-        background-color: $accent-4;
-      }
-    }
-
-    &__item {
-      z-index: 10;
-      text-align: center;
-      padding-top: 45px;
-      padding-bottom: 40px;
-
-      @include media($max: $breakpoint-medium) {
-        padding-top: 35px;
-        padding-bottom: 30px;
-      }
-
-      span {
-        width: 100%;
-      }
-
-      .h2 {
-        font-size: 45px;
-
-        @include media($max: $breakpoint-xlarge) {
-      	  font-size: 40px;
-      	}
-
-      	@include media($max: $breakpoint-medium) {
-      	  font-size: 35px;
-      	}
-      }
-
-      .h3 {
-        margin-top: 10px;
-      }
-
-      &:first-of-type {
-        background-color: $accent;
-      }
-
-      &:nth-of-type(2) {
-        background-color: $accent-2;
-      }
-
-      &:nth-of-type(3) {
-        background-color: $accent-3;
-      }
-
-      &:last-of-type {
-        background-color: $accent-4;
-      }
-    }
-  }
-
   .couple {
-    background-color: $off-white;
-
     .row {
-      justify-content: space-between;
+      justify-content: space-around;
 
       @include media($max: $breakpoint-large) {
         justify-content: center;
       }
     }
-
-    .column:not(:last-of-type) {
-      @include media($max: $breakpoint-medium) {
-        margin-bottom: $gutter-half;
-      }
-    }
   }
 
   .how-we-met {
-    position: relative;
-
     .row {
       justify-content: center;
     }
@@ -279,8 +162,224 @@
 
       @include media($max: $breakpoint-medium) {
         padding: $gutter $gutter-half;
-        order: -1;
+        margin-bottom: 0 !important;
       }
+    }
+  }
+
+  .program {
+    .row {
+      align-items: flex-start;
+    }
+
+    &__image, &__items {
+      position: sticky;
+      top: 65px;
+
+      @include media($max: $breakpoint-medium) {
+        top: 55px;
+      }
+    }
+
+    &__image {
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: calc(-50px - #{$gutter-half});
+        width: 1px;
+        height: 100%;
+        border-left: 1px dashed rgba($grey, 0.25);
+
+        @include media($max: $breakpoint-large) {
+          display: none;
+        }
+      }
+
+      @include media($min: $breakpoint-medium + 1px) {
+        padding-right: 0;
+      }
+
+      @include media($max: $breakpoint-medium) {
+        display: none;
+      }
+    }
+
+    &__items {
+      padding-top: $gutter-half;
+      padding-bottom: $gutter-half;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: calc(50px + #{$gutter-quarter});
+        width: 1px;
+        height: 100%;
+        border-left: 1px dashed rgba($grey, 0.25);
+
+        @include media($min: $breakpoint-medium + 1px) {
+          display: none;
+        }
+
+        @include media($max: $breakpoint-small) {
+          display: none;
+        }
+      }
+    }
+
+    &__item {
+      position: relative;
+      display: flex;
+      z-index: 1;
+
+      &:not(:last-of-type) {
+        margin-bottom: 25px;
+      }
+
+      &__left {
+        width: 100px;
+        margin-right: $gutter-half;
+
+        @include media($max: $breakpoint-small) {
+          width: 85px;
+          margin-right: $gutter-quarter;
+        }
+
+        span {
+          display: inline-block;
+          background-color: $accent;
+          color: $white;
+          text-align: center;
+          border-radius: 9999px;
+          padding: 5px 10px;
+          width: 100%;
+        }
+      }
+
+      &__right {
+        width: calc(100% - 100px - #{$gutter-half});
+        padding-top: 4px;
+
+        @include media($max: $breakpoint-small) {
+          width: calc(100% - 85px - #{$gutter-quarter});
+        }
+
+        .content {
+          margin-top: 10px;
+
+          @include media($min: $breakpoint-medium, $max: $breakpoint-large) {
+            margin-left: calc(-100px - #{$gutter-half});
+          }
+
+          @include media($max: $breakpoint-small) {
+            margin-left: calc(-85px - #{$gutter-quarter});
+          }
+        }
+      }
+    }
+  }
+
+  .faqs {
+    .row {
+      justify-content: center;
+    }
+
+    &__item {
+      border-bottom: 1px solid $grey;
+
+      &.is-open {
+        .content {
+          opacity: 1;
+        }
+
+        button {
+          padding-bottom: 10px;
+
+          &:before {
+            opacity: 0;
+          }
+        }
+      }
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      button {
+        position: relative;
+        width: 100%;
+        text-align: left;
+        padding-right: calc(#{$gutter-half} + 11px);
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          background-color: $grey;
+        }
+
+        &:before {
+          top: 20px;
+          right: 5px;
+          width: 1px;
+          height: 11px;
+          transition: opacity 300ms;
+        }
+
+        &:after {
+          top: 25px;
+          right: 0;
+          width: 11px;
+          height: 1px;
+        }
+      }
+
+      .content {
+        display: none;
+        margin-bottom: 15px;
+        opacity: 0;
+        transition: opacity 300ms;
+      }
+    }
+  }
+
+  .registry {
+    a {
+      display: block;
+      overflow: hidden;
+    }
+
+    .image-wrapper {
+      position: relative;
+      height: 0;
+      padding-bottom: 50px;
+      max-width: 250px;
+      margin: auto;
+
+      .image-placeholder {
+        position: static;
+
+        img {
+          position: absolute !important;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          max-width: 100%;
+          max-height: 100%;
+          width: auto;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  .form {
+    .row {
+      justify-content: center;
     }
   }
 }

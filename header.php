@@ -29,6 +29,7 @@
 				--accent-2: rgba(var(--accent-rgb), 0.825);
 				--accent-3: rgba(var(--accent-rgb), 0.65);
 				--accent-4: rgba(var(--accent-rgb), 0.475);
+				--accent-5: rgba(var(--accent-rgb), 0.3);
 			}
 		</style>
 	</head>
@@ -50,6 +51,7 @@
 			</button>
 			<nav>
 				<?php $showFullSite = get_field('show_full_site', 'options'); ?>
+				<?php $form = get_field('form', 'options'); ?>
 				<ul>
 					<li><a href="#home" class="is-active">Home</a></li>
 					<li><a href="#couple">Couple</a></li>
@@ -58,8 +60,8 @@
 						<li><a href="#program">Program</a></li>
 						<li><a href="#faqs">FAQs</a></li>
 						<li><a href="#registry">Registry</a></li>
-						<li><a href="#rsvp">RSVP</a></li>
 					<?php endif; ?>
+					<li><a href="#form"><?php echo $form['title']; ?></a></li>
 				</ul>
 			</nav>
 			<div class="header__overlay"></div>

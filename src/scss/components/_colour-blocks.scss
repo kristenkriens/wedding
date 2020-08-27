@@ -1,0 +1,179 @@
+.colour-blocks {
+  display: flex;
+  align-items: center;
+  padding: 0 !important;
+
+  .row {
+    padding: 0;
+  }
+
+  .column {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+    @include media($max: $breakpoint-medium) {
+      justify-content: center;
+    }
+
+    .row {
+      width: calc(100% + #{$gutter});
+
+      @include media($max: $breakpoint-medium) {
+        width: calc(100% + #{$gutter-half});
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 0;
+
+    .h4 {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__title, &__item {
+    align-items: center;
+    padding: calc(#{$gutter-half} + #{$gutter-quarter}) $gutter;
+
+    @include media($max: $breakpoint-large) {
+      padding-left: $gutter-half;
+      padding-right: $gutter-half;
+    }
+  }
+
+  &__title, &__item:last-of-type {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 50vw;
+    }
+  }
+
+  &__title {
+    @include media($min: $breakpoint-medium) {
+      padding-left: $gutter;
+    }
+
+    @include media($max: $breakpoint-medium) {
+      text-align: center;
+      margin-bottom: 0 !important;
+    }
+
+    &:after {
+      right: 100%;
+      background-color: $dark-grey;
+    }
+  }
+
+  &__items {
+    padding-left: 0;
+    padding-right: $gutter;
+
+    @include media($min: $breakpoint-small + 1px) {
+      flex-wrap: nowrap !important;
+    }
+
+    @include media($max: $breakpoint-medium) {
+      padding-right: 0;
+    }
+
+    &:before {
+      left: 100%;
+      background-color: $accent-5;
+    }
+  }
+
+  &__item {
+    width: 100%;
+    position: relative;
+    background-color: $off-white;
+    text-align: center;
+    z-index: 10;
+
+    &, a, button {
+      color: $white;
+    }
+
+    @include media($max: $breakpoint-small) {
+      width: 50%;
+    }
+
+    > * {
+      position: relative;
+      z-index: 10;
+    }
+
+    span {
+      width: 100%;
+    }
+
+    .h2 {
+      font-size: 45px;
+
+      @include media($max: $breakpoint-xlarge) {
+        font-size: 40px;
+      }
+
+      @include media($max: $breakpoint-medium) {
+        font-size: 35px;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    &:after {
+      left: 100%;
+    }
+
+    .h3 {
+      margin-top: 5px;
+    }
+
+    &:first-of-type:before {
+      background-color: $accent;
+    }
+
+    &:nth-of-type(2):before {
+      background-color: $accent-2;
+    }
+
+    &:nth-of-type(3):before {
+      background-color: $accent-3;
+    }
+
+    &:nth-of-type(4):before {
+      background-color: $accent-4;
+    }
+
+    &:last-of-type {
+      &:first-of-type:after {
+        background-color: $accent-2;
+      }
+
+      &:nth-of-type(2):after {
+        background-color: $accent-3;
+      }
+
+      &:nth-of-type(3):after {
+        background-color: $accent-4;
+      }
+
+      &:nth-of-type(4):after {
+        background-color: $accent-5;
+      }
+    }
+  }
+}

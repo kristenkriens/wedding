@@ -1,5 +1,8 @@
 <?php
   add_image_size( '2000x1000f', 2000, 1000, false );
+  add_image_size( '1000x750f', 1000, 750, false );
+  add_image_size( '615x450', 615, 450, true );
+  add_image_size( '400x250f', 400, 250, false );
 
   function get_lazy_image($imageId, $imageSize, $additionalClasses = '') {
     $html = null;

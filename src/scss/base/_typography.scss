@@ -1,6 +1,6 @@
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	display: block;
-	font-family: $heading;
+	font-family: $display;
 	font-weight: normal;
 	text-transform: uppercase;
 	line-height: normal;
@@ -8,7 +8,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 h1, .h1 {
-	font-family: $display;
+	font-family: $cursive;
 	font-size: 125px;
 	text-transform: none;
 	line-height: normal;
@@ -27,7 +27,7 @@ h2, .h2 {
 	font-size: 25px;
 
 	@include media($max: $breakpoint-medium) {
-	  font-size: 20px;
+	  font-size: 23px;
 	}
 }
 
@@ -52,25 +52,43 @@ h5, .h5 {
 }
 
 .title {
-	position: relative;
+	margin-bottom: 20px;
 
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: -20px;
-		left: 0;
-		width: 30px;
-		height: 1px;
-		background-color: $accent;
+	&--has-line {
+		position: relative;
+		margin-bottom: 40px;
+
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: -20px;
+			left: 0;
+			width: 30px;
+			height: 1px;
+			background-color: $accent;
+		}
+	}
+
+	&--centered {
+		text-align: center;
+		margin-bottom: 30px;
+
+		@include media($max: $breakpoint-medium) {
+			margin-bottom: 20px;
+		}
+
+		&.title--has-line:after {
+			left: 50%;
+			transform: translateY(-50%);
+		}
 	}
 
 	h2 {
 		color: $grey;
-		margin-bottom: 10px;
-	}
 
-	+ .content {
-		margin-top: 40px;
+		+ h3 {
+			margin-top: 10px;
+		}
 	}
 }
 
@@ -94,10 +112,8 @@ a {
 	outline: none;
 	transition: 300ms opacity;
 
-	&:not(.button) {
-		@include hover() {
-			opacity: 0.75;
-		}
+	@include hover() {
+		opacity: 0.75;
 	}
 }
 
@@ -109,6 +125,10 @@ button, .button, [role="button"], input[type="button"], input[type="submit"], [t
 	outline: none;
 	cursor: pointer;
 	transition: 300ms all;
+}
+
+a, button {
+	color: $grey;
 }
 
 ol, ul {

@@ -3,7 +3,7 @@
 
 <?php $backgroundPattern = get_field('background_pattern', 'options'); ?>
 
-<section id="home" class="hero has-background-image">
+<section id="home" class="hero has-white-outline">
   <div class="hero__slider">
     <?php $heroImages = get_field('hero_images', 'options'); ?>
     <button class="hero__slider__arrow hero__slider__arrow--left">
@@ -11,7 +11,7 @@
     </button>
     <div class="hero__slider__track">
       <?php foreach ($heroImages as $image): ?>
-          <?php echo get_lazy_image($image['image'], '2000x1000f', 'cover' . ($image['zoom_direction'] ? ' zoom-' . $image['zoom_direction'] : '')); ?>
+          <?php echo get_lazy_image($image['image'], '2000x1000f', ($image['zoom_direction'] ? ' zoom-' . $image['zoom_direction'] : '')); ?>
       <?php endforeach; ?>
     </div>
     <button class="hero__slider__arrow hero__slider__arrow--right">
@@ -42,32 +42,32 @@
   <?php $unixCurrentDateTime = $currentDateTime->getTimestamp(); ?>
   <?php $unixWeddingDateTime = strtotime($weddingDateTime . ' ' . get_option('timezone_string')); ?>
   <?php $remainingTime = abs($unixWeddingDateTime - $unixCurrentDateTime); ?>
-  <section id="countdown" class="countdown" data-timestamp="<?php echo $unixWeddingDateTime; ?>">
+  <section id="countdown" class="countdown colour-blocks" data-timestamp="<?php echo $unixWeddingDateTime; ?>">
   	<div class="row">
-  		<div class="countdown__title column small-12 large-4">
-        <h2>
-          <span class="h4">Days Until</span>
-          The Wedding
-        </h2>
+  		<div class="colour-blocks__title bg-dark-grey column small-12 large-4">
+        <div class="title">
+          <h2>
+            <span class="h4">Days Until</span>
+            The Wedding
+          </h2>
+        </div>
       </div>
-      <div class="countdown__content column small-12 large-8">
-        <div class="row">
-          <div class="countdown__item column small-6 medium-3">
-            <span id="days" class="h2">0</span>
-            <span class="h3">Days</span>
-          </div>
-          <div class="countdown__item column small-6 medium-3">
-            <span id="hours" class="h2">0</span>
-            <span class="h3">Hours</span>
-          </div>
-          <div class="countdown__item column small-6 medium-3">
-            <span id="minutes" class="h2">0</span>
-            <span class="h3">Mins</span>
-          </div>
-          <div class="countdown__item column small-6 medium-3">
-            <span id="seconds" class="h2">0</span>
-            <span class="h3">Secs</span>
-          </div>
+      <div class="colour-blocks__items column small-12 large-8">
+        <div class="colour-blocks__item">
+          <span id="days" class="h2">0</span>
+          <span class="h3">Days</span>
+        </div>
+        <div class="colour-blocks__item">
+          <span id="hours" class="h2">0</span>
+          <span class="h3">Hours</span>
+        </div>
+        <div class="colour-blocks__item">
+          <span id="minutes" class="h2">0</span>
+          <span class="h3">Mins</span>
+        </div>
+        <div class="colour-blocks__item">
+          <span id="seconds" class="h2">0</span>
+          <span class="h3">Secs</span>
         </div>
       </div>
     </div>
@@ -85,7 +85,7 @@
         <?php $personContent = $person['content']; ?>
         <div class="column small-12 medium-10 large-6 xxlarge-5">
           <div class="card card--bordered">
-            <div class="title">
+            <div class="title title--has-line">
               <h2><?php echo $personFirstName; ?> <?php echo $personLastName; ?></h2>
               <h3><?php echo $personType; ?></h3>
             </div>
@@ -104,12 +104,12 @@
   <?php $howWeMetTitle = $howWeMet['title']; ?>
   <?php $howWeMetSubtitle = $howWeMet['subtitle']; ?>
   <?php $howWeMetContent = $howWeMet['content']; ?>
-  <section class="how-we-met has-background-pattern">
-    <?php echo get_lazy_bg_image($backgroundPattern, '2000x1000f', 'cover'); ?>
+  <section class="how-we-met has-background-image">
+    <?php echo get_lazy_bg_image($backgroundPattern, '2000x1000f'); ?>
     <div class="row">
-      <div class="column small-12 medium-10 large-8">
+      <div class="column small-12 medium-10 xlarge-8">
         <div class="card">
-          <div class="title">
+          <div class="title title--has-line">
             <h2><?php echo $howWeMetTitle; ?></h2>
             <?php if ($howWeMetSubtitle): ?>
               <h3><?php echo $howWeMetSubtitle; ?></h3>
@@ -126,20 +126,15 @@
 
 <?php $venue = get_field('venue', 'options'); ?>
 <?php if ($venue): ?>
-  <?php $venueImage = $venue['image']; ?>
   <?php $venueTitle = $venue['title']; ?>
   <?php $venueSubtitle = $venue['subtitle']; ?>
   <?php $venueContent = $venue['content']; ?>
   <?php $venueCTA = $venue['cta']; ?>
-  <section id="venue" class="venue <?php echo $showFullSite ? 'dark' : null; ?>">
+  <?php $venueImage = $venue['image']; ?>
+  <section id="venue" class="venue bg-dark-grey">
     <div class="row">
-      <div class="venue__image full-left column small-12 large-6">
-        <div class="has-background-image">
-          <?php echo get_lazy_image($venueImage, '1000x750f', 'cover'); ?>
-        </div>
-      </div>
       <div class="venue__content column small-12 large-6">
-        <div class="title">
+        <div class="title title--has-line">
           <h2><?php echo $venueTitle; ?></h2>
           <?php if ($venueSubtitle): ?>
             <h3><?php echo $venueSubtitle; ?></h3>
@@ -151,18 +146,141 @@
         <?php $button = $venueCTA; ?>
         <?php include( locate_template( 'parts/components/button.php' ) ); ?>
       </div>
+      <div class="venue__image column small-12 large-6">
+        <div class="full-right has-background-image has-white-outline">
+          <?php echo get_lazy_image($venueImage, '1000x750f'); ?>
+        </div>
+      </div>
     </div>
   </section>
 <?php endif; ?>
 
 <?php if ($showFullSite): ?>
-  <section id="program" class="program"></section>
+  <?php $program = get_field('program', 'options'); ?>
+  <?php if ($program): ?>
+    <?php $programTitle = $program['title']; ?>
+    <?php $programSubtitle = $program['subtitle']; ?>
+    <?php $programImage = $program['image']; ?>
+    <?php $programItems = $program['items']; ?>
+    <section id="program" class="program">
+      <div class="row">
+        <div class="program__title column small-12">
+          <div class="title title--centered">
+            <h2><?php echo $programTitle; ?></h2>
+            <?php if ($programSubtitle): ?>
+              <h3><?php echo $programSubtitle; ?></h3>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="program__image column small-12 large-6">
+          <div class="has-white-outline">
+            <?php echo get_lazy_image($programImage, '615x450'); ?>
+          </div>
+        </div>
+        <div class="program__items column small-12 large-6">
+          <?php foreach ($programItems as $item): ?>
+            <div class="program__item">
+              <div class="program__item__left">
+                <span class="h4"><?php echo $item['time']; ?></span>
+              </div>
+              <div class="program__item__right">
+                <h4 class="h3"><?php echo $item['title']; ?></h4>
+                <?php if ($item['content']): ?>
+                  <div class="content">
+                    <?php echo $item['content']; ?>
+                  </div>
+                <?php endif; ?>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </section>
+  <?php endif; ?>
 
-  <section id="faqs" class="faqs"></section>
+  <?php $faqs = get_field('faqs', 'options'); ?>
+  <?php if ($faqs): ?>
+    <?php $faqsTitle = $faqs['title']; ?>
+    <?php $faqsSubtitle = $faqs['subtitle']; ?>
+    <?php $faqsItems = $faqs['items']; ?>
+    <section id="faqs" class="faqs bg-light-grey">
+      <div class="row">
+        <div class="faqs__title column small-12">
+          <div class="title title--centered">
+            <h2><?php echo $faqsTitle; ?></h2>
+            <?php if ($faqsSubtitle): ?>
+              <h3><?php echo $faqsSubtitle; ?></h3>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="faqs__items column small-12 large-10 xlarge-8">
+          <?php foreach ($faqsItems as $item): ?>
+            <div class="faqs__item">
+              <button class="h3"><?php echo $item['question']; ?></button>
+              <div class="content">
+                <?php echo $item['answer']; ?>
+              </div>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </section>
+  <?php endif; ?>
 
-  <section id="registry" class="registry"></section>
+  <?php $registry = get_field('registry', 'options'); ?>
+  <?php if ($registry): ?>
+    <?php $registryTitle = $registry['title']; ?>
+    <?php $registryItems = $registry['items']; ?>
+    <section id="registry" class="registry colour-blocks">
+    	<div class="row">
+    		<div class="colour-blocks__title bg-dark-grey column small-12 large-4">
+          <div class="title">
+            <h2><?php echo $registryTitle; ?></h2>
+          </div>
+        </div>
+        <div class="colour-blocks__items column small-12 large-8">
+          <?php foreach ($registryItems as $item): ?>
+            <div class="colour-blocks__item">
+              <a href="<?php echo $item['link']; ?>">
+                <?php echo get_lazy_image($item['logo'], '400x250f'); ?>
+              </a>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </section>
+  <?php endif; ?>
+<?php endif; ?>
 
-  <section id="rsvp" class="rsvp"></section>
+<?php $form = get_field('form', 'options'); ?>
+<?php if ($form): ?>
+  <?php $formTitle = $form['title']; ?>
+  <?php $formSubtitle = $form['subtitle']; ?>
+  <?php $formContent = $form['content']; ?>
+  <?php $formId = $form['form_id']; ?>
+  <section id="form" class="form has-background-image">
+    <?php echo get_lazy_bg_image($backgroundPattern, '2000x1000f'); ?>
+    <div class="row">
+      <div class="column small-12 medium-10 large-8 xlarge-6">
+        <div class="card">
+          <div class="title title--centered">
+            <h2><?php echo $formTitle ?></h2>
+            <?php if ($formSubtitle): ?>
+              <h3><?php echo $formSubtitle; ?></h3>
+            <?php endif; ?>
+          </div>
+          <?php if ($formContent): ?>
+            <div class="content"><?php echo $formContent; ?></div>
+          <?php endif; ?>
+          <?php echo do_shortcode('[fluentform id="' . $formId . '"]'); ?>
+        </div>
+      </div>
+    </div>
+  </section>
 <?php endif; ?>
 
 <?php get_footer(); ?>
