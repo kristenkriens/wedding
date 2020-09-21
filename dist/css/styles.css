@@ -136,26 +136,37 @@ template {
 .no-scroll {
   overflow-y: hidden; }
 
-.bg-light-grey, .bg-dark-grey {
+.bg-grey, .bg-accent {
   color: #fff; }
-  .bg-light-grey .title h2, .bg-dark-grey .title h2 {
+  .bg-grey .title:after, .bg-accent .title:after {
+    background-color: #fff; }
+  .bg-grey h1, .bg-grey .h1, .bg-grey h2, .bg-grey .h2, .bg-grey h3, .bg-grey .h3, .bg-grey h4, .bg-grey .h4, .bg-grey h5, .bg-grey .h5, .bg-grey h6, .bg-grey .h6, .bg-accent h1, .bg-accent .h1, .bg-accent h2, .bg-accent .h2, .bg-accent h3, .bg-accent .h3, .bg-accent h4, .bg-accent .h4, .bg-accent h5, .bg-accent .h5, .bg-accent h6, .bg-accent .h6 {
+    color: #fff !important; }
+  .bg-grey a, .bg-grey button, .bg-accent a, .bg-accent button {
     color: #fff; }
-  .bg-light-grey a, .bg-light-grey button, .bg-dark-grey a, .bg-dark-grey button {
-    color: #fff; }
-  .bg-light-grey .button, .bg-light-grey form input[type="button"], form .bg-light-grey input[type="button"], .bg-light-grey form input[type="submit"], form .bg-light-grey input[type="submit"], .bg-light-grey form button, form .bg-light-grey button, .bg-dark-grey .button, .bg-dark-grey form input[type="button"], form .bg-dark-grey input[type="button"], .bg-dark-grey form input[type="submit"], form .bg-dark-grey input[type="submit"], .bg-dark-grey form button, form .bg-dark-grey button {
-    border: 1px solid #898989; }
-    .bg-light-grey .button:hover, .bg-light-grey form input[type="button"]:hover, form .bg-light-grey input[type="button"]:hover, .bg-light-grey form input[type="submit"]:hover, form .bg-light-grey input[type="submit"]:hover, .bg-light-grey form button:hover, form .bg-light-grey button:hover, .bg-light-grey .button:active, .bg-light-grey form input[type="button"]:active, form .bg-light-grey input[type="button"]:active, .bg-light-grey form input[type="submit"]:active, form .bg-light-grey input[type="submit"]:active, .bg-light-grey form button:active, form .bg-light-grey button:active, .bg-light-grey .button:focus, .bg-light-grey form input[type="button"]:focus, form .bg-light-grey input[type="button"]:focus, .bg-light-grey form input[type="submit"]:focus, form .bg-light-grey input[type="submit"]:focus, .bg-light-grey form button:focus, form .bg-light-grey button:focus, .bg-dark-grey .button:hover, .bg-dark-grey form input[type="button"]:hover, form .bg-dark-grey input[type="button"]:hover, .bg-dark-grey form input[type="submit"]:hover, form .bg-dark-grey input[type="submit"]:hover, .bg-dark-grey form button:hover, form .bg-dark-grey button:hover, .bg-dark-grey .button:active, .bg-dark-grey form input[type="button"]:active, form .bg-dark-grey input[type="button"]:active, .bg-dark-grey form input[type="submit"]:active, form .bg-dark-grey input[type="submit"]:active, .bg-dark-grey form button:active, form .bg-dark-grey button:active, .bg-dark-grey .button:focus, .bg-dark-grey form input[type="button"]:focus, form .bg-dark-grey input[type="button"]:focus, .bg-dark-grey form input[type="submit"]:focus, form .bg-dark-grey input[type="submit"]:focus, .bg-dark-grey form button:focus, form .bg-dark-grey button:focus {
-      background-color: #898989; }
-  .bg-light-grey .faqs__item, .bg-dark-grey .faqs__item {
-    border-bottom: 1px solid #fff !important; }
-    .bg-light-grey .faqs__item button:before, .bg-light-grey .faqs__item button:after, .bg-dark-grey .faqs__item button:before, .bg-dark-grey .faqs__item button:after {
+  .bg-grey .button, .bg-grey form input[type="button"], form .bg-grey input[type="button"], .bg-grey form input[type="submit"], form .bg-grey input[type="submit"], .bg-grey form button, form .bg-grey button, .bg-accent .button, .bg-accent form input[type="button"], form .bg-accent input[type="button"], .bg-accent form input[type="submit"], form .bg-accent input[type="submit"], .bg-accent form button, form .bg-accent button {
+    border-color: rgba(255, 255, 255, 0.5); }
+    .bg-grey .button:hover, .bg-grey form input[type="button"]:hover, form .bg-grey input[type="button"]:hover, .bg-grey form input[type="submit"]:hover, form .bg-grey input[type="submit"]:hover, .bg-grey form button:hover, form .bg-grey button:hover, .bg-grey .button:active, .bg-grey form input[type="button"]:active, form .bg-grey input[type="button"]:active, .bg-grey form input[type="submit"]:active, form .bg-grey input[type="submit"]:active, .bg-grey form button:active, form .bg-grey button:active, .bg-grey .button:focus, .bg-grey form input[type="button"]:focus, form .bg-grey input[type="button"]:focus, .bg-grey form input[type="submit"]:focus, form .bg-grey input[type="submit"]:focus, .bg-grey form button:focus, form .bg-grey button:focus, .bg-accent .button:hover, .bg-accent form input[type="button"]:hover, form .bg-accent input[type="button"]:hover, .bg-accent form input[type="submit"]:hover, form .bg-accent input[type="submit"]:hover, .bg-accent form button:hover, form .bg-accent button:hover, .bg-accent .button:active, .bg-accent form input[type="button"]:active, form .bg-accent input[type="button"]:active, .bg-accent form input[type="submit"]:active, form .bg-accent input[type="submit"]:active, .bg-accent form button:active, form .bg-accent button:active, .bg-accent .button:focus, .bg-accent form input[type="button"]:focus, form .bg-accent input[type="button"]:focus, .bg-accent form input[type="submit"]:focus, form .bg-accent input[type="submit"]:focus, .bg-accent form button:focus, form .bg-accent button:focus {
+      background-color: rgba(255, 255, 255, 0.35) !important; }
+  .bg-grey .faqs__item, .bg-accent .faqs__item {
+    border-color: #fff !important; }
+    .bg-grey .faqs__item button:before, .bg-grey .faqs__item button:after, .bg-accent .faqs__item button:before, .bg-accent .faqs__item button:after {
       background-color: #fff !important; }
 
-.bg-light-grey {
-  background-color: #a9a9a9; }
+.bg-grey {
+  background-color: #898989; }
+  .bg-grey:after {
+    background-color: #898989; }
 
-.bg-dark-grey {
-  background-color: #595959; }
+.bg-accent {
+  background-color: var(--accent); }
+  .bg-accent:after {
+    background-color: var(--accent); }
+
+.bg-accent-4 {
+  background-color: var(--accent-4); }
+  .bg-accent-4:after {
+    background-color: var(--accent-4); }
 
 .has-background-image {
   position: relative;
@@ -170,16 +181,23 @@ template {
 
 .has-white-outline {
   position: relative; }
-  .has-white-outline:after {
+  .has-white-outline:before, .has-white-outline:after {
     content: '';
     position: absolute;
+    z-index: 10;
+    pointer-events: none; }
+  .has-white-outline:before {
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(137, 137, 137, 0.25);
-    outline: 2px solid rgba(255, 255, 255, 0.85);
-    outline-offset: calc(calc(calc(calc(40px / 4) * -1) / 2) - 2px); }
+    right: 0;
+    bottom: 0;
+    background-color: rgba(137, 137, 137, 0.25); }
+  .has-white-outline:after {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.85); }
 
 @media (min-width: 1351px) {
   .full-left {
@@ -361,6 +379,12 @@ template {
       align-items: flex-end !important; } }
 
 @font-face {
+  font-family: 'Belista';
+  src: url("../assets/fonts/Belista/Belista.ttf");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
   font-family: 'Great Vibes';
   src: url("../assets/fonts/GreatVibes/GreatVibes-Regular.eot");
   src: url("../assets/fonts/GreatVibes/GreatVibes-Regular.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/GreatVibes/GreatVibes-Regular.woff2") format("woff2"), url("../assets/fonts/GreatVibes/GreatVibes-Regular.woff") format("woff"), url("../assets/fonts/GreatVibes/GreatVibes-Regular.ttf") format("truetype"), url("../assets/fonts/GreatVibes/GreatVibes-Regular.svg#greatvibesregular") format("svg");
@@ -412,7 +436,6 @@ template {
   background: var(--accent); }
 
 body {
-  background-color: #fafafa;
   font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
   color: #a9a9a9;
   font-size: 14px;
@@ -427,6 +450,14 @@ body {
 img {
   max-width: 100%;
   height: auto; }
+
+.dot {
+  background-color: #fff;
+  position: fixed;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  z-index: 100; }
 
 .skipnav:focus, .skipnav:active {
   position: absolute !important;
@@ -451,6 +482,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-weight: normal;
   text-transform: uppercase;
   line-height: normal;
+  color: #898989;
   margin: 0; }
 
 h1, .h1 {
@@ -467,16 +499,16 @@ h1, .h1 {
       font-size: 75px; } }
 
 h2, .h2 {
-  font-size: 25px; }
+  font-size: 22px; }
   @media (max-width: 768px) {
     h2, .h2 {
-      font-size: 23px; } }
+      font-size: 20px; } }
 
 h3, .h3 {
-  font-size: 20px; }
+  font-size: 18px; }
   @media (max-width: 768px) {
     h3, .h3 {
-      font-size: 18px; } }
+      font-size: 16px; } }
 
 h4, .h4 {
   font-size: 16px; }
@@ -485,13 +517,16 @@ h4, .h4 {
       font-size: 14px; } }
 
 h5, .h5 {
-  font-size: 12px; }
+  font-size: 14px; }
+  @media (max-width: 768px) {
+    h5, .h5 {
+      font-size: 12px; } }
 
 .title {
-  margin-bottom: 20px; }
+  margin-bottom: 30px; }
   .title--has-line {
     position: relative;
-    margin-bottom: 40px; }
+    margin-bottom: 48px; }
     .title--has-line:after {
       content: '';
       position: absolute;
@@ -500,19 +535,16 @@ h5, .h5 {
       width: 30px;
       height: 1px;
       background-color: var(--accent); }
+    .title--has-line + .content {
+      margin-top: -8px; }
   .title--centered {
-    text-align: center;
-    margin-bottom: 30px; }
-    @media (max-width: 768px) {
-      .title--centered {
-        margin-bottom: 20px; } }
+    text-align: center; }
     .title--centered.title--has-line:after {
       left: 50%;
-      transform: translateY(-50%); }
-  .title h2 {
-    color: #898989; }
-    .title h2 + h3 {
-      margin-top: 10px; }
+      transform: translateX(-50%); }
+  .title h2 + h3 {
+    color: #a9a9a9;
+    margin-top: 10px; }
 
 p {
   margin: 0; }
@@ -584,12 +616,15 @@ strong {
     transform-origin: 50% 50%; } }
 
 form label {
-  font-size: 14px !important;
+  font-size: 16px !important;
   font-weight: 300 !important; }
+  @media (max-width: 768px) {
+    form label {
+      font-size: 14px !important; } }
 
 form input:not([type="button"]), form input:not([type="submit"]), form select, form textarea {
   background-color: transparent;
-  font-size: 14px !important;
+  font-size: 16px !important;
   font-weight: 300;
   outline: none;
   border: none;
@@ -598,10 +633,13 @@ form input:not([type="button"]), form input:not([type="submit"]), form select, f
   height: auto !important;
   margin: 0;
   width: 100%;
-  background-color: #fafafa !important;
+  background-color: #f9f9f9 !important;
   border: 1px solid rgba(169, 169, 169, 0.25) !important;
   border-radius: 0 !important;
   transition: border-color 300ms !important; }
+  @media (max-width: 768px) {
+    form input:not([type="button"]), form input:not([type="submit"]), form select, form textarea {
+      font-size: 14px !important; } }
 
 form input:-webkit-autofill,
 form input:-webkit-autofill:active,
@@ -649,6 +687,10 @@ form input[type="button"], form input[type="submit"], form button {
     form input[type="button"], form input[type="submit"], form button {
       width: 100%; } }
 
+@media (min-width: 769px) {
+  .fluentform form {
+    margin: 0 calc(calc(40px / 4) * -1); } }
+
 .fluentform .ff-el-group {
   margin-bottom: calc(40px / 2); }
   .fluentform .ff-el-group.ff_submit_btn_wrapper {
@@ -656,7 +698,16 @@ form input[type="button"], form input[type="submit"], form button {
 
 @media (min-width: 769px) {
   .fluentform .ff-t-cell {
-    padding: 0 calc(40px / 4); } }
+    padding: 0 calc(40px / 4) !important; } }
+
+@media (min-width: 769px) {
+  .fluentform .ff-btn {
+    margin: 0 calc(40px / 4) !important; } }
+
+.fluentform .ff-name-address-wrapper .ff-t-container:first-of-type {
+  display: block; }
+  .fluentform .ff-name-address-wrapper .ff-t-container:first-of-type .ff-t-cell {
+    display: block; }
 
 .fluentform .ff-el-is-error .text-danger {
   font-size: 11px;
@@ -674,7 +725,7 @@ form input[type="button"], form input[type="submit"], form button {
     transform: translateY(-50%);
     width: 13px;
     height: 13px;
-    background-color: #fafafa;
+    background-color: #f9f9f9;
     border: 1px solid rgba(169, 169, 169, 0.25); }
   .fluentform .ff-el-form-check label:after {
     content: '';
@@ -695,9 +746,9 @@ form input[type="button"], form input[type="submit"], form button {
   opacity: 1; }
 
 .fluentform .ff-message-success {
-  padding: 0;
-  margin-top: 0;
-  border: none;
+  padding: 5px 10px;
+  margin-top: calc(40px / 2);
+  border: 1px solid var(--accent);
   box-shadow: none; }
 
 .fluentform .ff_submit_btn_wrapper {
@@ -764,7 +815,7 @@ form input[type="button"], form input[type="submit"], form button {
     .header {
       height: 55px;
       padding: calc(40px / 2); } }
-  .header.is-scrolled a, .header.is-scrolled button, .header.is-open a, .header.is-open button {
+  .header.is-scrolled a, .header.is-scrolled a .h2, .header.is-scrolled button, .header.is-scrolled button .h2, .header.is-open a, .header.is-open a .h2, .header.is-open button, .header.is-open button .h2 {
     color: #898989; }
   .header.is-scrolled .hamburger > div, .header.is-open .hamburger > div {
     background-color: #898989; }
@@ -803,10 +854,12 @@ form input[type="button"], form input[type="submit"], form button {
     .header.is-open:not(.is-scrolled) .hamburger > div {
       background-color: #fff; } }
   .header a, .header button {
-    color: #fff;
     font-family: "Cinzel", "Times New Roman", serif;
+    font-size: 14px;
     text-transform: uppercase;
     padding: 10px; }
+    .header a, .header a .h2, .header button, .header button .h2 {
+      color: #fff; }
   .header__overlay {
     position: fixed;
     top: 0;
@@ -931,7 +984,7 @@ form input[type="button"], form input[type="submit"], form button {
           bottom: 5px;
           left: 10px;
           right: 10px;
-          height: 2px;
+          height: 1px;
           background-color: var(--accent);
           opacity: 0;
           transition: opacity 300ms; }
@@ -1481,7 +1534,7 @@ form input[type="button"], form input[type="submit"], form button {
   -ms-flex-align: center !important;
   align-items: center !important;
   background-color: transparent;
-  padding: 10px 15px !important;
+  padding: 10px 20px !important;
   min-height: 45px !important;
   text-align: center !important;
   font-family: "Cinzel", "Times New Roman", serif;
@@ -1515,15 +1568,53 @@ form input[type="button"], form input[type="submit"], form button {
     margin: 0 calc(40px / 2) 40px; }
 
 .card {
+  position: relative;
   background-color: #fff;
-  padding: 40px;
+  padding: calc(40px + 20px);
   text-align: center;
   height: 100%;
-  outline: 2px solid var(--accent);
-  outline-offset: calc(calc(calc(calc(40px / 4) * -1) / 2) - 2px); }
-  .card--bordered {
-    border: calc(40px / 2) solid var(--accent);
-    outline-offset: calc(calc(calc(40px / 2) * -1) + calc(calc(calc(calc(40px / 4) * -1) / 2) - 2px)); }
+  max-width: 875px;
+  width: 100%;
+  margin: 0 auto; }
+  @media (max-width: 768px) {
+    .card {
+      padding: calc(calc(40px / 2) + 20px); } }
+  .card:before, .card:after {
+    content: '';
+    position: absolute;
+    border: 1px solid var(--accent);
+    pointer-events: none; }
+  .card:before {
+    display: none; }
+  .card:after {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px; }
+  .card--outlined {
+    padding: 40px;
+    border: calc(40px + 20px) solid var(--accent); }
+    @media (max-width: 768px) {
+      .card--outlined {
+        padding: calc(40px / 2); } }
+    .card--outlined:before, .card--outlined:after {
+      border-color: #fff; }
+    .card--outlined:before {
+      display: block;
+      top: -22px;
+      left: -11px;
+      right: -11px;
+      bottom: -22px; }
+    .card--outlined:after {
+      top: -11px;
+      left: -22px;
+      right: -22px;
+      bottom: -11px; }
+    @media (max-width: 768px) {
+      .card--outlined {
+        border-width: calc(calc(40px / 2) + calc(40px / 4) + 5px); } }
+  .card--narrow {
+    max-width: 600px; }
   .card .title:after {
     left: 50%;
     transform: translateX(-50%); }
@@ -1531,6 +1622,7 @@ form input[type="button"], form input[type="submit"], form button {
     text-align: left; }
 
 .colour-blocks {
+  background-color: #fff;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
@@ -1582,8 +1674,7 @@ form input[type="button"], form input[type="submit"], form button {
       text-align: center;
       margin-bottom: 0 !important; } }
   .colour-blocks__title:after {
-    right: 100%;
-    background-color: #595959; }
+    right: 100%; }
   .colour-blocks__items {
     padding-left: 0;
     padding-right: 40px; }
@@ -1594,16 +1685,17 @@ form input[type="button"], form input[type="submit"], form button {
     @media (max-width: 768px) {
       .colour-blocks__items {
         padding-right: 0; } }
-    .colour-blocks__items:before {
-      left: 100%;
+    .colour-blocks__items:before, .colour-blocks__items:after {
+      left: 100%; }
+    .colour-blocks__items:after {
       background-color: var(--accent-5); }
   .colour-blocks__item {
     width: 100%;
     position: relative;
-    background-color: #fafafa;
+    background-color: #fff;
     text-align: center;
     z-index: 10; }
-    .colour-blocks__item, .colour-blocks__item a, .colour-blocks__item button {
+    .colour-blocks__item, .colour-blocks__item a, .colour-blocks__item button, .colour-blocks__item span {
       color: #fff; }
     @media (max-width: 480px) {
       .colour-blocks__item {
@@ -1675,6 +1767,8 @@ form input[type="button"], form input[type="submit"], form button {
   color: #fff;
   height: 100vh;
   min-height: 500px; }
+  .home .hero h1, .home .hero .h1, .home .hero h2, .home .hero .h2 {
+    color: #fff; }
   .home .hero__slider {
     position: absolute;
     top: 0;
@@ -1729,20 +1823,6 @@ form input[type="button"], form input[type="submit"], form button {
           .home .hero__content h1 span {
             display: block;
             margin: 0; } }
-    .home .hero__content .date {
-      text-transform: none; }
-
-.home .couple .row {
-  -ms-flex-pack: distribute;
-  justify-content: space-around; }
-  @media (max-width: 960px) {
-    .home .couple .row {
-      -ms-flex-pack: center;
-      justify-content: center; } }
-
-.home .how-we-met .row {
-  -ms-flex-pack: center;
-  justify-content: center; }
 
 .home .venue {
   padding: 0; }
@@ -1763,29 +1843,36 @@ form input[type="button"], form input[type="submit"], form button {
         padding: 40px calc(40px / 2);
         margin-bottom: 0 !important; } }
 
-.home .program .row {
+.home .program .row + .row {
   -ms-flex-align: start;
-  align-items: flex-start; }
+  align-items: flex-start;
+  position: relative; }
+  .home .program .row + .row:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(50% + 50px + calc(40px / 2));
+    width: 1px;
+    height: 100%;
+    border-left: 1px dashed rgba(89, 89, 89, 0.25); }
+    @media (min-width: 769px) and (max-width: 960px) {
+      .home .program .row + .row:after {
+        display: none; } }
+    @media (max-width: 768px) {
+      .home .program .row + .row:after {
+        left: calc(50px + calc(40px / 2)); } }
+    @media (max-width: 480px) {
+      .home .program .row + .row:after {
+        display: none; } }
 
 .home .program__image, .home .program__items {
   position: -webkit-sticky;
   position: sticky;
-  top: 65px; }
+  top: 65px;
+  z-index: 10; }
   @media (max-width: 768px) {
     .home .program__image, .home .program__items {
       top: 55px; } }
-
-.home .program__image:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: calc(-50px - calc(40px / 2));
-  width: 1px;
-  height: 100%;
-  border-left: 1px dashed rgba(137, 137, 137, 0.25); }
-  @media (max-width: 960px) {
-    .home .program__image:after {
-      display: none; } }
 
 @media (min-width: 769px) {
   .home .program__image {
@@ -1798,26 +1885,15 @@ form input[type="button"], form input[type="submit"], form button {
 .home .program__items {
   padding-top: calc(40px / 2);
   padding-bottom: calc(40px / 2); }
-  .home .program__items:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: calc(50px + calc(40px / 4));
-    width: 1px;
-    height: 100%;
-    border-left: 1px dashed rgba(137, 137, 137, 0.25); }
-    @media (min-width: 769px) {
-      .home .program__items:after {
-        display: none; } }
-    @media (max-width: 480px) {
-      .home .program__items:after {
-        display: none; } }
+  @media (max-width: 960px) {
+    .home .program__items {
+      padding-top: 0;
+      padding-bottom: 0; } }
 
 .home .program__item {
   position: relative;
   display: -ms-flexbox;
-  display: flex;
-  z-index: 1; }
+  display: flex; }
   .home .program__item:not(:last-of-type) {
     margin-bottom: 25px; }
   .home .program__item__left {
@@ -1850,20 +1926,20 @@ form input[type="button"], form input[type="submit"], form button {
         .home .program__item__right .content {
           margin-left: calc(-85px - calc(40px / 4)); } }
 
-.home .faqs .row {
-  -ms-flex-pack: center;
-  justify-content: center; }
+.home .faqs .card {
+  text-align: left; }
+
+.home .faqs__items {
+  margin-top: -18px; }
 
 .home .faqs__item {
-  border-bottom: 1px solid #898989; }
-  .home .faqs__item.is-open .content {
-    opacity: 1; }
-  .home .faqs__item.is-open button {
-    padding-bottom: 10px; }
-    .home .faqs__item.is-open button:before {
-      opacity: 0; }
+  border-bottom: 1px solid var(--accent); }
   .home .faqs__item:last-of-type {
     margin-bottom: 0; }
+  .home .faqs__item.is-open .content {
+    display: block; }
+  .home .faqs__item.is-open button:before {
+    opacity: 0; }
   .home .faqs__item button {
     position: relative;
     width: 100%;
@@ -1888,8 +1964,8 @@ form input[type="button"], form input[type="submit"], form button {
       height: 1px; }
   .home .faqs__item .content {
     display: none;
+    margin-top: -5px;
     margin-bottom: 15px;
-    opacity: 0;
     transition: opacity 300ms; }
 
 .home .registry a {
@@ -1915,7 +1991,3 @@ form input[type="button"], form input[type="submit"], form button {
       width: auto;
       height: auto;
       object-fit: contain; }
-
-.home .form .row {
-  -ms-flex-pack: center;
-  justify-content: center; }

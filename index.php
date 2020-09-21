@@ -1,8 +1,6 @@
 <?php $bodyClasses = 'home'; ?>
 <?php include('header.php'); ?>
 
-<?php $backgroundPattern = get_field('background_pattern', 'options'); ?>
-
 <section id="home" class="hero has-white-outline">
   <div class="hero__slider">
     <?php $heroImages = get_field('hero_images', 'options'); ?>
@@ -30,7 +28,7 @@
         <?php $weddingDateTime = get_field('wedding_date_time', 'options'); ?>
         <?php if ($weddingDateTime): ?>
           <?php $weddingDate = date('F jS, Y', strtotime($weddingDateTime)); ?>
-          <div class="h2 date"><?php echo $weddingDate; ?></div>
+          <div class="h2"><?php echo $weddingDate; ?></div>
         <?php endif; ?>
       </div>
     </div>
@@ -44,7 +42,7 @@
   <?php $remainingTime = abs($unixWeddingDateTime - $unixCurrentDateTime); ?>
   <section id="countdown" class="countdown colour-blocks" data-timestamp="<?php echo $unixWeddingDateTime; ?>">
   	<div class="row">
-  		<div class="colour-blocks__title bg-dark-grey column small-12 large-4">
+  		<div class="colour-blocks__title bg-grey column small-12 large-4">
         <div class="title">
           <h2>
             <span class="h4">Days Until</span>
@@ -74,42 +72,16 @@
   </section>
 <?php endif; ?>
 
-<?php $couple = get_field('couple', 'options'); ?>
-<?php if ($couple): ?>
-  <section id="couple" class="couple">
-    <div class="row">
-      <?php foreach ($couple as $person): ?>
-        <?php $personFirstName = $person['first_name']; ?>
-        <?php $personLastName = $person['last_name']; ?>
-        <?php $personType = $person['type']; ?>
-        <?php $personContent = $person['content']; ?>
-        <div class="column small-12 medium-10 large-6 xxlarge-5">
-          <div class="card card--bordered">
-            <div class="title title--has-line">
-              <h2><?php echo $personFirstName; ?> <?php echo $personLastName; ?></h2>
-              <h3><?php echo $personType; ?></h3>
-            </div>
-            <div class="content">
-              <?php echo $personContent; ?>
-            </div>
-          </div>
-        </div>
-      <?php endforeach; ?>
-    </div>
-  </section>
-<?php endif; ?>
-
 <?php $howWeMet = get_field('how_we_met', 'options'); ?>
 <?php if ($howWeMet): ?>
   <?php $howWeMetTitle = $howWeMet['title']; ?>
   <?php $howWeMetSubtitle = $howWeMet['subtitle']; ?>
   <?php $howWeMetContent = $howWeMet['content']; ?>
-  <section class="how-we-met has-background-image">
-    <?php echo get_lazy_bg_image($backgroundPattern, '2000x1000f'); ?>
+  <section id="how-we-met" class="how-we-met">
     <div class="row">
-      <div class="column small-12 medium-10 xlarge-8">
-        <div class="card">
-          <div class="title title--has-line">
+      <div class="column">
+        <div class="card card--outlined">
+          <div class="title title--has-line title--centered">
             <h2><?php echo $howWeMetTitle; ?></h2>
             <?php if ($howWeMetSubtitle): ?>
               <h3><?php echo $howWeMetSubtitle; ?></h3>
@@ -131,7 +103,7 @@
   <?php $venueContent = $venue['content']; ?>
   <?php $venueCTA = $venue['cta']; ?>
   <?php $venueImage = $venue['image']; ?>
-  <section id="venue" class="venue bg-dark-grey">
+  <section id="venue" class="venue bg-accent">
     <div class="row">
       <div class="venue__content column small-12 large-6">
         <div class="title title--has-line">
@@ -165,7 +137,7 @@
     <section id="program" class="program">
       <div class="row">
         <div class="program__title column small-12">
-          <div class="title title--centered">
+          <div class="title title--has-line title--centered">
             <h2><?php echo $programTitle; ?></h2>
             <?php if ($programSubtitle): ?>
               <h3><?php echo $programSubtitle; ?></h3>
@@ -205,27 +177,27 @@
     <?php $faqsTitle = $faqs['title']; ?>
     <?php $faqsSubtitle = $faqs['subtitle']; ?>
     <?php $faqsItems = $faqs['items']; ?>
-    <section id="faqs" class="faqs bg-light-grey">
+    <section id="faqs" class="faqs bg-accent-4">
       <div class="row">
-        <div class="faqs__title column small-12">
-          <div class="title title--centered">
-            <h2><?php echo $faqsTitle; ?></h2>
-            <?php if ($faqsSubtitle): ?>
-              <h3><?php echo $faqsSubtitle; ?></h3>
-            <?php endif; ?>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="faqs__items column small-12 large-10 xlarge-8">
-          <?php foreach ($faqsItems as $item): ?>
-            <div class="faqs__item">
-              <button class="h3"><?php echo $item['question']; ?></button>
-              <div class="content">
-                <?php echo $item['answer']; ?>
-              </div>
+        <div class="column">
+          <div class="card">
+            <div class="title title--has-line title--centered">
+              <h2><?php echo $faqsTitle; ?></h2>
+              <?php if ($faqsSubtitle): ?>
+                <h3><?php echo $faqsSubtitle; ?></h3>
+              <?php endif; ?>
             </div>
-          <?php endforeach; ?>
+            <div class="faqs__items">
+              <?php foreach ($faqsItems as $index => $item): ?>
+                <div class="faqs__item <?php echo $index == 0 ? 'is-open' : null; ?>">
+                  <button class="h3"><?php echo $item['question']; ?></button>
+                  <div class="content">
+                    <?php echo $item['answer']; ?>
+                  </div>
+                </div>
+              <?php endforeach; ?>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -237,7 +209,7 @@
     <?php $registryItems = $registry['items']; ?>
     <section id="registry" class="registry colour-blocks">
     	<div class="row">
-    		<div class="colour-blocks__title bg-dark-grey column small-12 large-4">
+    		<div class="colour-blocks__title bg-grey column small-12 large-4">
           <div class="title">
             <h2><?php echo $registryTitle; ?></h2>
           </div>
@@ -245,7 +217,7 @@
         <div class="colour-blocks__items column small-12 large-8">
           <?php foreach ($registryItems as $item): ?>
             <div class="colour-blocks__item">
-              <a href="<?php echo $item['link']; ?>">
+              <a href="<?php echo $item['link']; ?>" target="_blank">
                 <?php echo get_lazy_image($item['logo'], '400x250f'); ?>
               </a>
             </div>
@@ -262,12 +234,11 @@
   <?php $formSubtitle = $form['subtitle']; ?>
   <?php $formContent = $form['content']; ?>
   <?php $formId = $form['form_id']; ?>
-  <section id="form" class="form has-background-image">
-    <?php echo get_lazy_bg_image($backgroundPattern, '2000x1000f'); ?>
+  <section id="form" class="form">
     <div class="row">
-      <div class="column small-12 medium-10 large-8 xlarge-6">
-        <div class="card">
-          <div class="title title--centered">
+      <div class="column">
+        <div class="card card--outlined card--narrow">
+          <div class="title title--has-line title--centered">
             <h2><?php echo $formTitle ?></h2>
             <?php if ($formSubtitle): ?>
               <h3><?php echo $formSubtitle; ?></h3>

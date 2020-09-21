@@ -54,7 +54,7 @@
 				<?php $form = get_field('form', 'options'); ?>
 				<ul>
 					<li><a href="#home" class="is-active">Home</a></li>
-					<li><a href="#couple">Couple</a></li>
+					<li><a href="#how-we-met">How We Met</a></li>
 					<li><a href="#venue">Venue</a></li>
 					<?php if ($showFullSite): ?>
 						<li><a href="#program">Program</a></li>

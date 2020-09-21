@@ -29,6 +29,10 @@
     height: 100vh;
     min-height: 500px;
 
+    h1, .h1, h2, .h2 {
+      color: $white;
+    }
+
     &__slider {
       position: absolute;
       top: 0;
@@ -120,26 +124,6 @@
           }
         }
       }
-
-      .date {
-        text-transform: none;
-      }
-    }
-  }
-
-  .couple {
-    .row {
-      justify-content: space-around;
-
-      @include media($max: $breakpoint-large) {
-        justify-content: center;
-      }
-    }
-  }
-
-  .how-we-met {
-    .row {
-      justify-content: center;
     }
   }
 
@@ -168,13 +152,37 @@
   }
 
   .program {
-    .row {
+    .row + .row {
       align-items: flex-start;
+      position: relative;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: calc(50% + 50px + #{$gutter-half});
+        width: 1px;
+        height: 100%;
+        border-left: 1px dashed rgba($dark-grey, 0.25);
+
+        @include media($min: $breakpoint-medium + 1px, $max: $breakpoint-large) {
+          display: none;
+        }
+
+        @include media($max: $breakpoint-medium) {
+          left: calc(50px + #{$gutter-half});
+        }
+
+        @include media($max: $breakpoint-small) {
+          display: none;
+        }
+      }
     }
 
     &__image, &__items {
       position: sticky;
       top: 65px;
+      z-index: 10;
 
       @include media($max: $breakpoint-medium) {
         top: 55px;
@@ -182,20 +190,6 @@
     }
 
     &__image {
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: calc(-50px - #{$gutter-half});
-        width: 1px;
-        height: 100%;
-        border-left: 1px dashed rgba($grey, 0.25);
-
-        @include media($max: $breakpoint-large) {
-          display: none;
-        }
-      }
-
       @include media($min: $breakpoint-medium + 1px) {
         padding-right: 0;
       }
@@ -209,29 +203,15 @@
       padding-top: $gutter-half;
       padding-bottom: $gutter-half;
 
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: calc(50px + #{$gutter-quarter});
-        width: 1px;
-        height: 100%;
-        border-left: 1px dashed rgba($grey, 0.25);
-
-        @include media($min: $breakpoint-medium + 1px) {
-          display: none;
-        }
-
-        @include media($max: $breakpoint-small) {
-          display: none;
-        }
+      @include media($max: $breakpoint-large) {
+        padding-top: 0;
+        padding-bottom: 0;
       }
     }
 
     &__item {
       position: relative;
       display: flex;
-      z-index: 1;
 
       &:not(:last-of-type) {
         margin-bottom: 25px;
@@ -281,29 +261,29 @@
   }
 
   .faqs {
-    .row {
-      justify-content: center;
+    .card {
+      text-align: left;
+    }
+
+    &__items {
+      margin-top: -18px;
     }
 
     &__item {
-      border-bottom: 1px solid $grey;
-
-      &.is-open {
-        .content {
-          opacity: 1;
-        }
-
-        button {
-          padding-bottom: 10px;
-
-          &:before {
-            opacity: 0;
-          }
-        }
-      }
+      border-bottom: 1px solid $accent;
 
       &:last-of-type {
         margin-bottom: 0;
+      }
+
+      &.is-open {
+        .content {
+          display: block;
+        }
+
+        button:before {
+          opacity: 0;
+        }
       }
 
       button {
@@ -338,8 +318,8 @@
 
       .content {
         display: none;
+        margin-top: -5px;
         margin-bottom: 15px;
-        opacity: 0;
         transition: opacity 300ms;
       }
     }
@@ -374,12 +354,6 @@
           object-fit: contain;
         }
       }
-    }
-  }
-
-  .form {
-    .row {
-      justify-content: center;
     }
   }
 }

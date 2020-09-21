@@ -4,6 +4,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font-weight: normal;
 	text-transform: uppercase;
 	line-height: normal;
+	color: $grey;
 	margin: 0;
 }
 
@@ -24,18 +25,18 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-size: 25px;
+	font-size: 22px;
 
 	@include media($max: $breakpoint-medium) {
-	  font-size: 23px;
+	  font-size: 20px;
 	}
 }
 
 h3, .h3 {
-	font-size: 20px;
+	font-size: 18px;
 
 	@include media($max: $breakpoint-medium) {
-	  font-size: 18px;
+	  font-size: 16px;
 	}
 }
 
@@ -48,15 +49,19 @@ h4, .h4 {
 }
 
 h5, .h5 {
-	font-size: 12px;
+	font-size: 14px;
+
+	@include media($max: $breakpoint-medium) {
+	  font-size: 12px;
+	}
 }
 
 .title {
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 
 	&--has-line {
 		position: relative;
-		margin-bottom: 40px;
+		margin-bottom: 48px;
 
 		&:after {
 			content: '';
@@ -67,28 +72,26 @@ h5, .h5 {
 			height: 1px;
 			background-color: $accent;
 		}
+
+		+ .content {
+			margin-top: -8px;
+		}
 	}
 
 	&--centered {
 		text-align: center;
-		margin-bottom: 30px;
 
-		@include media($max: $breakpoint-medium) {
-			margin-bottom: 20px;
-		}
-
-		&.title--has-line:after {
-			left: 50%;
-			transform: translateY(-50%);
+		&.title--has-line {
+			&:after {
+				left: 50%;
+				transform: translateX(-50%);
+			}
 		}
 	}
 
-	h2 {
-		color: $grey;
-
-		+ h3 {
-			margin-top: 10px;
-		}
+	h2 + h3 {
+		color: $light-grey;
+		margin-top: 10px;
 	}
 }
 
@@ -112,7 +115,7 @@ a {
 	outline: none;
 	transition: 300ms opacity;
 
-	@include hover() {
+	@include hover {
 		opacity: 0.75;
 	}
 }

@@ -1,12 +1,16 @@
 form {
   label {
-    font-size: 14px !important;
+    font-size: 16px !important;
     font-weight: 300 !important;
+
+    @include media($max: $breakpoint-medium) {
+      font-size: 14px !important;
+    }
   }
 
   input:not([type="button"]), input:not([type="submit"]), select, textarea {
     background-color: transparent;
-    font-size: 14px !important;
+    font-size: 16px !important;
     font-weight: 300;
     outline: none;
     border: none;
@@ -19,6 +23,10 @@ form {
     border: 1px solid rgba($light-grey, 0.25) !important;
     border-radius: 0 !important;
     transition: border-color 300ms !important;
+
+    @include media($max: $breakpoint-medium) {
+      font-size: 14px !important;
+    }
   }
 
   input:-webkit-autofill,
@@ -86,6 +94,12 @@ form {
 }
 
 .fluentform {
+  form {
+    @include media($min: $breakpoint-medium + 1px) {
+      margin: 0 $neg-gutter-quarter;
+    }
+  }
+
   .ff-el-group {
     margin-bottom: $gutter-half;
 
@@ -96,7 +110,23 @@ form {
 
   .ff-t-cell {
     @include media($min: $breakpoint-medium + 1px) {
-      padding: 0 $gutter-quarter;
+      padding: 0 $gutter-quarter !important;
+    }
+  }
+
+  .ff-btn {
+    @include media($min: $breakpoint-medium + 1px) {
+      margin: 0 $gutter-quarter !important;
+    }
+  }
+
+  .ff-name-address-wrapper {
+    .ff-t-container:first-of-type {
+      display: block;
+
+      .ff-t-cell {
+        display: block;
+      }
     }
   }
 
@@ -154,9 +184,9 @@ form {
   }
 
   .ff-message-success {
-    padding: 0;
-    margin-top: 0;
-    border: none;
+    padding: 5px 10px;
+    margin-top: $gutter-half;
+    border: 1px solid $accent;
     box-shadow: none;
   }
 

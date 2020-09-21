@@ -18,7 +18,9 @@
 
 	&.is-scrolled, &.is-open {
 		a, button {
-			color: $grey;
+			&, .h2 {
+				color: $grey;
+			}
 		}
 
 		.hamburger > div {
@@ -99,10 +101,14 @@
 	}
 
 	a, button {
-		color: $white;
 		font-family: $display;
+		font-size: 14px;
 		text-transform: uppercase;
 		padding: 10px;
+
+		&, .h2 {
+			color: $white;
+		}
 	}
 
 	&__overlay {
@@ -252,7 +258,7 @@
 					bottom: 5px;
 					left: 10px;
 					right: 10px;
-					height: 2px;
+					height: 1px;
 					background-color: $accent;
 					opacity: 0;
 					transition: opacity 300ms;
