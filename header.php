@@ -30,6 +30,7 @@
 				--accent-3: rgba(var(--accent-rgb), 0.65);
 				--accent-4: rgba(var(--accent-rgb), 0.475);
 				--accent-5: rgba(var(--accent-rgb), 0.3);
+				--accent-6: rgba(var(--accent-rgb), 0.125);
 			}
 		</style>
 	</head>
@@ -54,10 +55,11 @@
 				<?php $form = get_field('form', 'options'); ?>
 				<ul>
 					<li><a href="#home" class="is-active">Home</a></li>
-					<li><a href="#how-we-met">How We Met</a></li>
-					<li><a href="#venue">Venue</a></li>
 					<?php if ($showFullSite): ?>
 						<li><a href="#program">Program</a></li>
+					<?php endif; ?>
+					<li><a href="#venue">Venue</a></li>
+					<?php if ($showFullSite): ?>
 						<li><a href="#faqs">FAQs</a></li>
 						<li><a href="#registry">Registry</a></li>
 					<?php endif; ?>

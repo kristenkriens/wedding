@@ -30,15 +30,6 @@ img {
   height: auto;
 }
 
-.dot {
-  background-color: #fff;
-  position: fixed;
-  border-radius: 50%;
-  width: 8px;
-  height: 8px;
-  z-index: 100;
-}
-
 .skipnav {
 	&:focus, &:active {
 		position: absolute !important;

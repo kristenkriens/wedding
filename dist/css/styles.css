@@ -159,14 +159,14 @@ template {
     background-color: #898989; }
 
 .bg-accent {
-  background-color: var(--accent); }
+  background-color: var(--accent-2); }
   .bg-accent:after {
-    background-color: var(--accent); }
+    background-color: var(--accent-2); }
 
-.bg-accent-4 {
-  background-color: var(--accent-4); }
-  .bg-accent-4:after {
-    background-color: var(--accent-4); }
+.bg-accent-5 {
+  background-color: var(--accent-5); }
+  .bg-accent-5:after {
+    background-color: var(--accent-5); }
 
 .has-background-image {
   position: relative;
@@ -450,14 +450,6 @@ body {
 img {
   max-width: 100%;
   height: auto; }
-
-.dot {
-  background-color: #fff;
-  position: fixed;
-  border-radius: 50%;
-  width: 8px;
-  height: 8px;
-  z-index: 100; }
 
 .skipnav:focus, .skipnav:active {
   position: absolute !important;
@@ -1573,7 +1565,7 @@ form input[type="button"], form input[type="submit"], form button {
   padding: calc(40px + 20px);
   text-align: center;
   height: 100%;
-  max-width: 875px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto; }
   @media (max-width: 768px) {
@@ -1593,10 +1585,11 @@ form input[type="button"], form input[type="submit"], form button {
     bottom: 10px; }
   .card--outlined {
     padding: 40px;
-    border: calc(40px + 20px) solid var(--accent); }
+    border: calc(40px + 20px) solid var(--accent-2); }
     @media (max-width: 768px) {
       .card--outlined {
-        padding: calc(40px / 2); } }
+        padding: calc(40px / 2);
+        border-width: calc(calc(40px / 2) + 15px); } }
     .card--outlined:before, .card--outlined:after {
       border-color: #fff; }
     .card--outlined:before {
@@ -1610,11 +1603,6 @@ form input[type="button"], form input[type="submit"], form button {
       left: -22px;
       right: -22px;
       bottom: -11px; }
-    @media (max-width: 768px) {
-      .card--outlined {
-        border-width: calc(calc(40px / 2) + calc(40px / 4) + 5px); } }
-  .card--narrow {
-    max-width: 600px; }
   .card .title:after {
     left: 50%;
     transform: translateX(-50%); }
@@ -1991,3 +1979,6 @@ form input[type="button"], form input[type="submit"], form button {
       width: auto;
       height: auto;
       object-fit: contain; }
+
+.home .form .card {
+  max-width: 600px; }

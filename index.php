@@ -72,61 +72,6 @@
   </section>
 <?php endif; ?>
 
-<?php $howWeMet = get_field('how_we_met', 'options'); ?>
-<?php if ($howWeMet): ?>
-  <?php $howWeMetTitle = $howWeMet['title']; ?>
-  <?php $howWeMetSubtitle = $howWeMet['subtitle']; ?>
-  <?php $howWeMetContent = $howWeMet['content']; ?>
-  <section id="how-we-met" class="how-we-met">
-    <div class="row">
-      <div class="column">
-        <div class="card card--outlined">
-          <div class="title title--has-line title--centered">
-            <h2><?php echo $howWeMetTitle; ?></h2>
-            <?php if ($howWeMetSubtitle): ?>
-              <h3><?php echo $howWeMetSubtitle; ?></h3>
-            <?php endif; ?>
-          </div>
-          <?php if ($howWeMetContent): ?>
-            <div class="content"><?php echo $howWeMetContent; ?></div>
-          <?php endif; ?>
-        </div>
-      </div>
-    </div>
-  </section>
-<?php endif; ?>
-
-<?php $venue = get_field('venue', 'options'); ?>
-<?php if ($venue): ?>
-  <?php $venueTitle = $venue['title']; ?>
-  <?php $venueSubtitle = $venue['subtitle']; ?>
-  <?php $venueContent = $venue['content']; ?>
-  <?php $venueCTA = $venue['cta']; ?>
-  <?php $venueImage = $venue['image']; ?>
-  <section id="venue" class="venue bg-accent">
-    <div class="row">
-      <div class="venue__content column small-12 large-6">
-        <div class="title title--has-line">
-          <h2><?php echo $venueTitle; ?></h2>
-          <?php if ($venueSubtitle): ?>
-            <h3><?php echo $venueSubtitle; ?></h3>
-          <?php endif; ?>
-        </div>
-        <?php if ($venueContent): ?>
-          <div class="content"><?php echo $venueContent; ?></div>
-        <?php endif; ?>
-        <?php $button = $venueCTA; ?>
-        <?php include( locate_template( 'parts/components/button.php' ) ); ?>
-      </div>
-      <div class="venue__image column small-12 large-6">
-        <div class="full-right has-background-image has-white-outline">
-          <?php echo get_lazy_image($venueImage, '1000x750f'); ?>
-        </div>
-      </div>
-    </div>
-  </section>
-<?php endif; ?>
-
 <?php if ($showFullSite): ?>
   <?php $program = get_field('program', 'options'); ?>
   <?php if ($program): ?>
@@ -171,16 +116,49 @@
       </div>
     </section>
   <?php endif; ?>
+<?php endif; ?>
 
+<?php $venue = get_field('venue', 'options'); ?>
+<?php if ($venue): ?>
+  <?php $venueTitle = $venue['title']; ?>
+  <?php $venueSubtitle = $venue['subtitle']; ?>
+  <?php $venueContent = $venue['content']; ?>
+  <?php $venueCTA = $venue['cta']; ?>
+  <?php $venueImage = $venue['image']; ?>
+  <section id="venue" class="venue bg-accent">
+    <div class="row">
+      <div class="venue__content column small-12 large-6">
+        <div class="title title--has-line">
+          <h2><?php echo $venueTitle; ?></h2>
+          <?php if ($venueSubtitle): ?>
+            <h3><?php echo $venueSubtitle; ?></h3>
+          <?php endif; ?>
+        </div>
+        <?php if ($venueContent): ?>
+          <div class="content"><?php echo $venueContent; ?></div>
+        <?php endif; ?>
+        <?php $button = $venueCTA; ?>
+        <?php include( locate_template( 'parts/components/button.php' ) ); ?>
+      </div>
+      <div class="venue__image column small-12 large-6">
+        <div class="full-right has-background-image has-white-outline">
+          <?php echo get_lazy_image($venueImage, '1000x750f'); ?>
+        </div>
+      </div>
+    </div>
+  </section>
+<?php endif; ?>
+
+<?php if ($showFullSite): ?>
   <?php $faqs = get_field('faqs', 'options'); ?>
   <?php if ($faqs): ?>
     <?php $faqsTitle = $faqs['title']; ?>
     <?php $faqsSubtitle = $faqs['subtitle']; ?>
     <?php $faqsItems = $faqs['items']; ?>
-    <section id="faqs" class="faqs bg-accent-4">
+    <section id="faqs" class="faqs">
       <div class="row">
         <div class="column">
-          <div class="card">
+          <div class="card card--outlined">
             <div class="title title--has-line title--centered">
               <h2><?php echo $faqsTitle; ?></h2>
               <?php if ($faqsSubtitle): ?>
@@ -234,10 +212,10 @@
   <?php $formSubtitle = $form['subtitle']; ?>
   <?php $formContent = $form['content']; ?>
   <?php $formId = $form['form_id']; ?>
-  <section id="form" class="form">
+  <section id="form" class="form bg-accent-5">
     <div class="row">
       <div class="column">
-        <div class="card card--outlined card--narrow">
+        <div class="card card--outlined">
           <div class="title title--has-line title--centered">
             <h2><?php echo $formTitle ?></h2>
             <?php if ($formSubtitle): ?>

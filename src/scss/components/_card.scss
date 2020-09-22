@@ -4,7 +4,7 @@
   padding: calc(#{$gutter} + 20px);
   text-align: center;
   height: 100%;
-  max-width: 875px;
+  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
 
@@ -32,10 +32,11 @@
 
   &--outlined {
     padding: $gutter;
-    border: calc(#{$gutter} + 20px) solid $accent;
+    border: calc(#{$gutter} + 20px) solid $accent-2;
 
     @include media($max: $breakpoint-medium) {
       padding: $gutter-half;
+      border-width: calc(#{$gutter-half} + 15px);
     }
 
     &:before, &:after {
@@ -56,14 +57,6 @@
   		right: -22px;
   		bottom: -11px;
     }
-
-    @include media($max: $breakpoint-medium) {
-      border-width: calc(#{$gutter-half} + #{$gutter-quarter} + 5px);
-    }
-  }
-
-  &--narrow {
-    max-width: 600px;
   }
 
   .title:after {

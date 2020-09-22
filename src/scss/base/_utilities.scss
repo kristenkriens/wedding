@@ -57,18 +57,18 @@
 }
 
 .bg-accent {
-	background-color: $accent;
+	background-color: $accent-2;
 
 	&:after {
-		background-color: $accent;
+		background-color: $accent-2;
 	}
 }
 
-.bg-accent-4 {
-	background-color: $accent-4;
+.bg-accent-5 {
+	background-color: $accent-5;
 
 	&:after {
-		background-color: $accent-4;
+		background-color: $accent-5;
 	}
 }
 
