@@ -2,9 +2,7 @@
   position: relative;
   background-color: $white;
   padding: calc(#{$gutter} + 20px);
-  text-align: center;
   height: 100%;
-  max-width: 1000px;
   width: 100%;
   margin: 0 auto;
 
@@ -32,11 +30,15 @@
 
   &--outlined {
     padding: $gutter;
-    border: calc(#{$gutter} + 20px) solid $accent-2;
+    border: $gutter-double solid $accent;
+
+    @include media($max: $breakpoint-xlarge) {
+      border-width: calc(#{$gutter} + #{$gutter-half});
+    }
 
     @include media($max: $breakpoint-medium) {
       padding: $gutter-half;
-      border-width: calc(#{$gutter-half} + 15px);
+      border-width: $gutter;
     }
 
     &:before, &:after {
@@ -59,12 +61,12 @@
     }
   }
 
-  .title:after {
-		left: 50%;
-    transform: translateX(-50%);
-	}
+  .title {
+    text-align: center;
 
-  form {
-    text-align: left;
+    &:after {
+  		left: 50%;
+      transform: translateX(-50%);
+  	}
   }
 }

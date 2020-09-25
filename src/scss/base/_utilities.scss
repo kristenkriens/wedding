@@ -12,7 +12,7 @@
 	overflow-y: hidden;
 }
 
-.bg-grey, .bg-accent {
+.bg-lightest-grey, .bg-accent {
 	color: $white;
 
 	.title {
@@ -29,11 +29,17 @@
 		color: $white;
 	}
 
+	p a:after {
+		background-color: $white;
+	}
+
 	.button {
-		border-color: rgba($white, 0.5);
+		background-color: $white !important;
+		color: $lightest-grey !important;
 
 	  @include hover {
-	    background-color: rgba($white, 0.35) !important;
+	    border-color: $white !important;
+			color: $white !important;
 		}
   }
 
@@ -48,27 +54,32 @@
 	}
 }
 
-.bg-grey {
-	background-color: $grey;
+.bg-lightest-grey {
+	position: relative;
+	background-color: $lightest-grey;
 
 	&:after {
-		background-color: $grey;
+		background-color: $lightest-grey;
+	}
+
+	> * {
+		position: relative;
 	}
 }
 
 .bg-accent {
-	background-color: $accent-2;
+	background-color: $accent;
 
 	&:after {
-		background-color: $accent-2;
+		background-color: $accent;
 	}
 }
 
-.bg-accent-5 {
-	background-color: $accent-5;
+.bg-accent-4 {
+	background-color: $accent-4;
 
 	&:after {
-		background-color: $accent-5;
+		background-color: $accent-4;
 	}
 }
 

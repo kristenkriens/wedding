@@ -42,7 +42,7 @@
   <?php $remainingTime = abs($unixWeddingDateTime - $unixCurrentDateTime); ?>
   <section id="countdown" class="countdown colour-blocks" data-timestamp="<?php echo $unixWeddingDateTime; ?>">
   	<div class="row">
-  		<div class="colour-blocks__title bg-grey column small-12 large-4">
+  		<div class="colour-blocks__title bg-lightest-grey column small-12 large-4">
         <div class="title">
           <h2>
             <span class="h4">Days Until</span>
@@ -72,50 +72,48 @@
   </section>
 <?php endif; ?>
 
-<?php if ($showFullSite): ?>
-  <?php $program = get_field('program', 'options'); ?>
-  <?php if ($program): ?>
-    <?php $programTitle = $program['title']; ?>
-    <?php $programSubtitle = $program['subtitle']; ?>
-    <?php $programImage = $program['image']; ?>
-    <?php $programItems = $program['items']; ?>
-    <section id="program" class="program">
-      <div class="row">
-        <div class="program__title column small-12">
-          <div class="title title--has-line title--centered">
-            <h2><?php echo $programTitle; ?></h2>
-            <?php if ($programSubtitle): ?>
-              <h3><?php echo $programSubtitle; ?></h3>
-            <?php endif; ?>
-          </div>
+<?php $program = get_field('program', 'options'); ?>
+<?php if ($program): ?>
+  <?php $programTitle = $program['title']; ?>
+  <?php $programSubtitle = $program['subtitle']; ?>
+  <?php $programImage = $program['image']; ?>
+  <?php $programItems = $program['items']; ?>
+  <section id="program" class="program">
+    <div class="row">
+      <div class="program__title column small-12">
+        <div class="title title--has-line title--centered">
+          <h2><?php echo $programTitle; ?></h2>
+          <?php if ($programSubtitle): ?>
+            <h3><?php echo $programSubtitle; ?></h3>
+          <?php endif; ?>
         </div>
       </div>
-      <div class="row">
-        <div class="program__image column small-12 large-6">
-          <div class="has-white-outline">
-            <?php echo get_lazy_image($programImage, '615x450'); ?>
-          </div>
+    </div>
+    <div class="row">
+      <div class="program__image column small-12 large-6">
+        <div class="has-white-outline">
+          <?php echo get_lazy_image($programImage, '615x450'); ?>
         </div>
-        <div class="program__items column small-12 large-6">
-          <?php foreach ($programItems as $item): ?>
-            <div class="program__item">
-              <div class="program__item__left">
-                <span class="h4"><?php echo $item['time']; ?></span>
-              </div>
-              <div class="program__item__right">
-                <h4 class="h3"><?php echo $item['title']; ?></h4>
-                <?php if ($item['content']): ?>
-                  <div class="content">
-                    <?php echo $item['content']; ?>
-                  </div>
-                <?php endif; ?>
-              </div>
+      </div>
+      <div class="program__items column small-12 large-6">
+        <?php foreach ($programItems as $item): ?>
+          <div class="program__item">
+            <div class="program__item__left">
+              <span class="h4"><?php echo $item['time']; ?></span>
             </div>
-          <?php endforeach; ?>
-        </div>
+            <div class="program__item__right">
+              <h4 class="h3"><?php echo $item['title']; ?></h4>
+              <?php if ($item['content']): ?>
+                <div class="content">
+                  <?php echo $item['content']; ?>
+                </div>
+              <?php endif; ?>
+            </div>
+          </div>
+        <?php endforeach; ?>
       </div>
-    </section>
-  <?php endif; ?>
+    </div>
+  </section>
 <?php endif; ?>
 
 <?php $venue = get_field('venue', 'options'); ?>
@@ -125,7 +123,7 @@
   <?php $venueContent = $venue['content']; ?>
   <?php $venueCTA = $venue['cta']; ?>
   <?php $venueImage = $venue['image']; ?>
-  <section id="venue" class="venue bg-accent">
+  <section id="venue" class="venue bg-lightest-grey">
     <div class="row">
       <div class="venue__content column small-12 large-6">
         <div class="title title--has-line">
@@ -149,61 +147,59 @@
   </section>
 <?php endif; ?>
 
-<?php if ($showFullSite): ?>
-  <?php $faqs = get_field('faqs', 'options'); ?>
-  <?php if ($faqs): ?>
-    <?php $faqsTitle = $faqs['title']; ?>
-    <?php $faqsSubtitle = $faqs['subtitle']; ?>
-    <?php $faqsItems = $faqs['items']; ?>
-    <section id="faqs" class="faqs">
-      <div class="row">
-        <div class="column">
-          <div class="card card--outlined">
-            <div class="title title--has-line title--centered">
-              <h2><?php echo $faqsTitle; ?></h2>
-              <?php if ($faqsSubtitle): ?>
-                <h3><?php echo $faqsSubtitle; ?></h3>
-              <?php endif; ?>
-            </div>
-            <div class="faqs__items">
-              <?php foreach ($faqsItems as $index => $item): ?>
-                <div class="faqs__item <?php echo $index == 0 ? 'is-open' : null; ?>">
-                  <button class="h3"><?php echo $item['question']; ?></button>
-                  <div class="content">
-                    <?php echo $item['answer']; ?>
-                  </div>
+<?php $faqs = get_field('faqs', 'options'); ?>
+<?php if ($faqs): ?>
+  <?php $faqsTitle = $faqs['title']; ?>
+  <?php $faqsSubtitle = $faqs['subtitle']; ?>
+  <?php $faqsItems = $faqs['items']; ?>
+  <section id="faqs" class="faqs">
+    <div class="row">
+      <div class="column">
+        <div class="card card--outlined">
+          <div class="title title--has-line title--centered">
+            <h2><?php echo $faqsTitle; ?></h2>
+            <?php if ($faqsSubtitle): ?>
+              <h3><?php echo $faqsSubtitle; ?></h3>
+            <?php endif; ?>
+          </div>
+          <div class="faqs__items">
+            <?php foreach ($faqsItems as $index => $item): ?>
+              <div class="faqs__item">
+                <button class="h3"><?php echo $item['question']; ?></button>
+                <div class="content">
+                  <?php echo $item['answer']; ?>
                 </div>
-              <?php endforeach; ?>
-            </div>
+              </div>
+            <?php endforeach; ?>
           </div>
         </div>
       </div>
-    </section>
-  <?php endif; ?>
+    </div>
+  </section>
+<?php endif; ?>
 
-  <?php $registry = get_field('registry', 'options'); ?>
-  <?php if ($registry): ?>
-    <?php $registryTitle = $registry['title']; ?>
-    <?php $registryItems = $registry['items']; ?>
-    <section id="registry" class="registry colour-blocks">
-    	<div class="row">
-    		<div class="colour-blocks__title bg-grey column small-12 large-4">
-          <div class="title">
-            <h2><?php echo $registryTitle; ?></h2>
-          </div>
-        </div>
-        <div class="colour-blocks__items column small-12 large-8">
-          <?php foreach ($registryItems as $item): ?>
-            <div class="colour-blocks__item">
-              <a href="<?php echo $item['link']; ?>" target="_blank">
-                <?php echo get_lazy_image($item['logo'], '400x250f'); ?>
-              </a>
-            </div>
-          <?php endforeach; ?>
+<?php $registry = get_field('registry', 'options'); ?>
+<?php if ($registry): ?>
+  <?php $registryTitle = $registry['title']; ?>
+  <?php $registryItems = $registry['items']; ?>
+  <section id="registry" class="registry colour-blocks">
+  	<div class="row">
+  		<div class="colour-blocks__title bg-lightest-grey column small-12 large-4">
+        <div class="title">
+          <h2><?php echo $registryTitle; ?></h2>
         </div>
       </div>
-    </section>
-  <?php endif; ?>
+      <div class="colour-blocks__items column small-12 large-8">
+        <?php foreach ($registryItems as $item): ?>
+          <div class="colour-blocks__item">
+            <a href="<?php echo $item['link']; ?>" target="_blank">
+              <?php echo get_lazy_image($item['logo'], '400x250f'); ?>
+            </a>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </section>
 <?php endif; ?>
 
 <?php $form = get_field('form', 'options'); ?>
@@ -212,10 +208,10 @@
   <?php $formSubtitle = $form['subtitle']; ?>
   <?php $formContent = $form['content']; ?>
   <?php $formId = $form['form_id']; ?>
-  <section id="form" class="form bg-accent-5">
+  <section id="form" class="form bg-accent-4">
     <div class="row">
       <div class="column">
-        <div class="card card--outlined">
+        <div class="card">
           <div class="title title--has-line title--centered">
             <h2><?php echo $formTitle ?></h2>
             <?php if ($formSubtitle): ?>

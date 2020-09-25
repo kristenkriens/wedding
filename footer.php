@@ -1,5 +1,5 @@
 		</main>
-		<footer class="footer bg-grey" role="contentinfo">
+		<footer class="footer" role="contentinfo">
 			<div class="row">
 				<div class="column small-12">
 					<span class="h3">

@@ -136,37 +136,44 @@ template {
 .no-scroll {
   overflow-y: hidden; }
 
-.bg-grey, .bg-accent {
+.bg-lightest-grey, .bg-accent {
   color: #fff; }
-  .bg-grey .title:after, .bg-accent .title:after {
+  .bg-lightest-grey .title:after, .bg-accent .title:after {
     background-color: #fff; }
-  .bg-grey h1, .bg-grey .h1, .bg-grey h2, .bg-grey .h2, .bg-grey h3, .bg-grey .h3, .bg-grey h4, .bg-grey .h4, .bg-grey h5, .bg-grey .h5, .bg-grey h6, .bg-grey .h6, .bg-accent h1, .bg-accent .h1, .bg-accent h2, .bg-accent .h2, .bg-accent h3, .bg-accent .h3, .bg-accent h4, .bg-accent .h4, .bg-accent h5, .bg-accent .h5, .bg-accent h6, .bg-accent .h6 {
+  .bg-lightest-grey h1, .bg-lightest-grey .h1, .bg-lightest-grey h2, .bg-lightest-grey .h2, .bg-lightest-grey h3, .bg-lightest-grey .h3, .bg-lightest-grey h4, .bg-lightest-grey .h4, .bg-lightest-grey h5, .bg-lightest-grey .h5, .bg-lightest-grey h6, .bg-lightest-grey .h6, .bg-accent h1, .bg-accent .h1, .bg-accent h2, .bg-accent .h2, .bg-accent h3, .bg-accent .h3, .bg-accent h4, .bg-accent .h4, .bg-accent h5, .bg-accent .h5, .bg-accent h6, .bg-accent .h6 {
     color: #fff !important; }
-  .bg-grey a, .bg-grey button, .bg-accent a, .bg-accent button {
+  .bg-lightest-grey a, .bg-lightest-grey button, .bg-accent a, .bg-accent button {
     color: #fff; }
-  .bg-grey .button, .bg-grey form input[type="button"], form .bg-grey input[type="button"], .bg-grey form input[type="submit"], form .bg-grey input[type="submit"], .bg-grey form button, form .bg-grey button, .bg-accent .button, .bg-accent form input[type="button"], form .bg-accent input[type="button"], .bg-accent form input[type="submit"], form .bg-accent input[type="submit"], .bg-accent form button, form .bg-accent button {
-    border-color: rgba(255, 255, 255, 0.5); }
-    .bg-grey .button:hover, .bg-grey form input[type="button"]:hover, form .bg-grey input[type="button"]:hover, .bg-grey form input[type="submit"]:hover, form .bg-grey input[type="submit"]:hover, .bg-grey form button:hover, form .bg-grey button:hover, .bg-grey .button:active, .bg-grey form input[type="button"]:active, form .bg-grey input[type="button"]:active, .bg-grey form input[type="submit"]:active, form .bg-grey input[type="submit"]:active, .bg-grey form button:active, form .bg-grey button:active, .bg-grey .button:focus, .bg-grey form input[type="button"]:focus, form .bg-grey input[type="button"]:focus, .bg-grey form input[type="submit"]:focus, form .bg-grey input[type="submit"]:focus, .bg-grey form button:focus, form .bg-grey button:focus, .bg-accent .button:hover, .bg-accent form input[type="button"]:hover, form .bg-accent input[type="button"]:hover, .bg-accent form input[type="submit"]:hover, form .bg-accent input[type="submit"]:hover, .bg-accent form button:hover, form .bg-accent button:hover, .bg-accent .button:active, .bg-accent form input[type="button"]:active, form .bg-accent input[type="button"]:active, .bg-accent form input[type="submit"]:active, form .bg-accent input[type="submit"]:active, .bg-accent form button:active, form .bg-accent button:active, .bg-accent .button:focus, .bg-accent form input[type="button"]:focus, form .bg-accent input[type="button"]:focus, .bg-accent form input[type="submit"]:focus, form .bg-accent input[type="submit"]:focus, .bg-accent form button:focus, form .bg-accent button:focus {
-      background-color: rgba(255, 255, 255, 0.35) !important; }
-  .bg-grey .faqs__item, .bg-accent .faqs__item {
+  .bg-lightest-grey p a:after, .bg-accent p a:after {
+    background-color: #fff; }
+  .bg-lightest-grey .button, .bg-lightest-grey form input[type="button"], form .bg-lightest-grey input[type="button"], .bg-lightest-grey form input[type="submit"], form .bg-lightest-grey input[type="submit"], .bg-lightest-grey form button, form .bg-lightest-grey button, .bg-accent .button, .bg-accent form input[type="button"], form .bg-accent input[type="button"], .bg-accent form input[type="submit"], form .bg-accent input[type="submit"], .bg-accent form button, form .bg-accent button {
+    background-color: #fff !important;
+    color: #c9c9c9 !important; }
+    .bg-lightest-grey .button:hover, .bg-lightest-grey form input[type="button"]:hover, form .bg-lightest-grey input[type="button"]:hover, .bg-lightest-grey form input[type="submit"]:hover, form .bg-lightest-grey input[type="submit"]:hover, .bg-lightest-grey form button:hover, form .bg-lightest-grey button:hover, .bg-lightest-grey .button:active, .bg-lightest-grey form input[type="button"]:active, form .bg-lightest-grey input[type="button"]:active, .bg-lightest-grey form input[type="submit"]:active, form .bg-lightest-grey input[type="submit"]:active, .bg-lightest-grey form button:active, form .bg-lightest-grey button:active, .bg-lightest-grey .button:focus, .bg-lightest-grey form input[type="button"]:focus, form .bg-lightest-grey input[type="button"]:focus, .bg-lightest-grey form input[type="submit"]:focus, form .bg-lightest-grey input[type="submit"]:focus, .bg-lightest-grey form button:focus, form .bg-lightest-grey button:focus, .bg-accent .button:hover, .bg-accent form input[type="button"]:hover, form .bg-accent input[type="button"]:hover, .bg-accent form input[type="submit"]:hover, form .bg-accent input[type="submit"]:hover, .bg-accent form button:hover, form .bg-accent button:hover, .bg-accent .button:active, .bg-accent form input[type="button"]:active, form .bg-accent input[type="button"]:active, .bg-accent form input[type="submit"]:active, form .bg-accent input[type="submit"]:active, .bg-accent form button:active, form .bg-accent button:active, .bg-accent .button:focus, .bg-accent form input[type="button"]:focus, form .bg-accent input[type="button"]:focus, .bg-accent form input[type="submit"]:focus, form .bg-accent input[type="submit"]:focus, .bg-accent form button:focus, form .bg-accent button:focus {
+      border-color: #fff !important;
+      color: #fff !important; }
+  .bg-lightest-grey .faqs__item, .bg-accent .faqs__item {
     border-color: #fff !important; }
-    .bg-grey .faqs__item button:before, .bg-grey .faqs__item button:after, .bg-accent .faqs__item button:before, .bg-accent .faqs__item button:after {
+    .bg-lightest-grey .faqs__item button:before, .bg-lightest-grey .faqs__item button:after, .bg-accent .faqs__item button:before, .bg-accent .faqs__item button:after {
       background-color: #fff !important; }
 
-.bg-grey {
-  background-color: #898989; }
-  .bg-grey:after {
-    background-color: #898989; }
+.bg-lightest-grey {
+  position: relative;
+  background-color: #c9c9c9; }
+  .bg-lightest-grey:after {
+    background-color: #c9c9c9; }
+  .bg-lightest-grey > * {
+    position: relative; }
 
 .bg-accent {
-  background-color: var(--accent-2); }
+  background-color: var(--accent); }
   .bg-accent:after {
-    background-color: var(--accent-2); }
+    background-color: var(--accent); }
 
-.bg-accent-5 {
-  background-color: var(--accent-5); }
-  .bg-accent-5:after {
-    background-color: var(--accent-5); }
+.bg-accent-4 {
+  background-color: var(--accent-4); }
+  .bg-accent-4:after {
+    background-color: var(--accent-4); }
 
 .has-background-image {
   position: relative;
@@ -451,6 +458,15 @@ img {
   max-width: 100%;
   height: auto; }
 
+.dot {
+  background-color: #fff;
+  position: fixed;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  z-index: 100;
+  pointer-events: none; }
+
 .skipnav:focus, .skipnav:active {
   position: absolute !important;
   top: 5px !important;
@@ -543,11 +559,6 @@ p {
   p:not(:first-of-type) {
     margin-top: 15px; }
 
-.link, p a:not(.button):not(form input[type="button"]):not(form input[type="submit"]):not(form button) {
-  color: var(--accent);
-  font-weight: bold;
-  text-decoration: underline; }
-
 a {
   font-family: inherit;
   text-decoration: none;
@@ -555,6 +566,20 @@ a {
   transition: 300ms opacity; }
   a:hover, a:active, a:focus {
     opacity: 0.75; }
+
+a, button {
+  color: #898989; }
+
+.link, p a {
+  position: relative; }
+  .link:after, p a:after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent); }
 
 button, .button, form input[type="button"], form input[type="submit"], form button, [role="button"], input[type="button"], input[type="submit"], [tabindex] {
   display: inline-block;
@@ -564,9 +589,6 @@ button, .button, form input[type="button"], form input[type="submit"], form butt
   outline: none;
   cursor: pointer;
   transition: 300ms all; }
-
-a, button {
-  color: #898989; }
 
 ol, ul {
   padding: 0;
@@ -672,8 +694,6 @@ form textarea {
   resize: none; }
 
 form input[type="button"], form input[type="submit"], form button {
-  background-color: var(--accent) !important;
-  border-color: transparent !important;
   transition: all 300ms !important; }
   @media (max-width: 768px) {
     form input[type="button"], form input[type="submit"], form button {
@@ -748,6 +768,8 @@ form input[type="button"], form input[type="submit"], form button {
   @media (max-width: 768px) {
     .fluentform .ff_submit_btn_wrapper {
       margin-top: calc(calc(40px / 2) + calc(40px / 4)); } }
+  .fluentform .ff_submit_btn_wrapper button {
+    margin: 0 auto; }
 
 .slick-slider {
   padding: 0; }
@@ -998,6 +1020,8 @@ form input[type="button"], form input[type="submit"], form button {
     -ms-flex-align: center;
     align-items: center;
     margin-bottom: 20px; }
+  .footer .h5 {
+    color: #a9a9a9; }
   .footer .heart {
     height: 30px;
     width: 30px;
@@ -1532,13 +1556,14 @@ form input[type="button"], form input[type="submit"], form button {
   font-family: "Cinzel", "Times New Roman", serif;
   font-size: 17px !important;
   text-transform: uppercase;
-  color: #a9a9a9;
-  border-radius: 0 !important;
-  border: 1px solid rgba(137, 137, 137, 0.25); }
+  background-color: var(--accent) !important;
+  border: 1px solid transparent !important;
+  color: #fff !important;
+  border-radius: 0 !important; }
   .button:hover, form input[type="button"]:hover, form input[type="submit"]:hover, form button:hover, .button:active, form input[type="button"]:active, form input[type="submit"]:active, form button:active, .button:focus, form input[type="button"]:focus, form input[type="submit"]:focus, form button:focus, input[type="button"]:hover, input[type="button"]:active, input[type="button"]:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
-    background-color: rgba(137, 137, 137, 0.25) !important;
-    border-color: transparent !important;
-    color: #fff;
+    background-color: transparent !important;
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
     opacity: 1 !important; }
   @media (max-width: 768px) {
     .button, form input[type="button"], form input[type="submit"], form button, input[type="button"], input[type="submit"] {
@@ -1563,9 +1588,7 @@ form input[type="button"], form input[type="submit"], form button {
   position: relative;
   background-color: #fff;
   padding: calc(40px + 20px);
-  text-align: center;
   height: 100%;
-  max-width: 1000px;
   width: 100%;
   margin: 0 auto; }
   @media (max-width: 768px) {
@@ -1585,11 +1608,14 @@ form input[type="button"], form input[type="submit"], form button {
     bottom: 10px; }
   .card--outlined {
     padding: 40px;
-    border: calc(40px + 20px) solid var(--accent-2); }
+    border: calc(40px * 2) solid var(--accent); }
+    @media (max-width: 1200px) {
+      .card--outlined {
+        border-width: calc(40px + calc(40px / 2)); } }
     @media (max-width: 768px) {
       .card--outlined {
         padding: calc(40px / 2);
-        border-width: calc(calc(40px / 2) + 15px); } }
+        border-width: 40px; } }
     .card--outlined:before, .card--outlined:after {
       border-color: #fff; }
     .card--outlined:before {
@@ -1603,11 +1629,11 @@ form input[type="button"], form input[type="submit"], form button {
       left: -22px;
       right: -22px;
       bottom: -11px; }
-  .card .title:after {
-    left: 50%;
-    transform: translateX(-50%); }
-  .card form {
-    text-align: left; }
+  .card .title {
+    text-align: center; }
+    .card .title:after {
+      left: 50%;
+      transform: translateX(-50%); }
 
 .colour-blocks {
   background-color: #fff;
@@ -1673,16 +1699,22 @@ form input[type="button"], form input[type="submit"], form button {
     @media (max-width: 768px) {
       .colour-blocks__items {
         padding-right: 0; } }
-    .colour-blocks__items:before, .colour-blocks__items:after {
-      left: 100%; }
     .colour-blocks__items:after {
-      background-color: var(--accent-5); }
+      background-color: var(--accent-5);
+      right: 0; }
   .colour-blocks__item {
     width: 100%;
     position: relative;
     background-color: #fff;
     text-align: center;
     z-index: 10; }
+    .colour-blocks__item:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
     .colour-blocks__item, .colour-blocks__item a, .colour-blocks__item button, .colour-blocks__item span {
       color: #fff; }
     @media (max-width: 480px) {
@@ -1701,13 +1733,6 @@ form input[type="button"], form input[type="submit"], form button {
       @media (max-width: 768px) {
         .colour-blocks__item .h2 {
           font-size: 35px; } }
-    .colour-blocks__item:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%; }
     .colour-blocks__item:after {
       left: 100%; }
     .colour-blocks__item .h3 {
@@ -1913,9 +1938,6 @@ form input[type="button"], form input[type="submit"], form button {
       @media (max-width: 480px) {
         .home .program__item__right .content {
           margin-left: calc(-85px - calc(40px / 4)); } }
-
-.home .faqs .card {
-  text-align: left; }
 
 .home .faqs__items {
   margin-top: -18px; }
