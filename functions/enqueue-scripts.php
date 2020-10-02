@@ -6,6 +6,7 @@
 
     wp_enqueue_script( 'slick', get_template_directory_uri() . '/vendor/slick.min.js', array( 'jquery' ), '1.8.1', true );
     wp_enqueue_script( 'jquery-lazy', get_template_directory_uri() . '/vendor/jquery.lazy.min.js', array( 'jquery' ), '1.15.0', true );
+    wp_enqueue_script( 'particles', get_template_directory_uri() . '/vendor/particles.min.js', false, '2.0.0', true );
     wp_enqueue_script( 'object-fit', get_template_directory_uri() . '/vendor/objectFitPolyfill.min.js', false, '1.7.10', true );
     wp_enqueue_script( 'intersection-observer', get_template_directory_uri() . '/vendor/intersectionObserver.js', false, '1.0.0', true );
 

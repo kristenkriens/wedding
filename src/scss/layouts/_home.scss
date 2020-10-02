@@ -115,6 +115,10 @@
         margin-bottom: 10px;
 
         span {
+          display: inline-block;
+        }
+
+        .ampersand {
           margin: 0 15px;
           font-size: 50%;
 
@@ -266,29 +270,17 @@
     }
 
     &__item {
-      border-bottom: 1px solid $accent;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      border-bottom: 3.5px dotted $accent;
+      position: relative;
+      width: 100%;
+      text-align: left;
 
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-
-      &.is-open {
-        .content {
-          display: block;
-        }
-
-        button:before {
-          opacity: 0;
-        }
-      }
-
-      button {
+      @include media($max: $breakpoint-large) {
         position: relative;
-        width: 100%;
-        text-align: left;
-        padding-right: calc(#{$gutter-half} + 11px);
-        padding-top: 15px;
-        padding-bottom: 15px;
+        display: block;
 
         &:before, &:after {
           content: '';
@@ -312,11 +304,60 @@
         }
       }
 
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      &.is-open {
+        &:before {
+          opacity: 0;
+        }
+
+        .content {
+          display: block;
+        }
+      }
+
+      .question {
+        text-align: left;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      div.question {
+        display: flex;
+        width: 40%;
+        margin-right: $gutter-half;
+
+        @include media($max: $breakpoint-large) {
+          display: none;
+        }
+      }
+
+      button.question {
+        width: 100%;
+        padding-right: calc(#{$gutter-half} + 11px);
+
+        @include media($min: $breakpoint-large + 1px) {
+          display: none !important;
+        }
+      }
+
       .content {
-        display: none;
-        margin-top: -5px;
+        width: 60%;
+        margin-top: 15px;
         margin-bottom: 15px;
-        transition: opacity 300ms;
+
+        @include media($min: $breakpoint-large + 1px) {
+          display: block !important;
+        }
+
+        @include media($max: $breakpoint-large) {
+          width: 100%;
+          display: none;
+          margin-top: -5px;
+          transition: opacity 300ms;
+        }
       }
     }
   }

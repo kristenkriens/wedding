@@ -54,14 +54,15 @@
 			<nav>
 				<?php $form = get_field('form', 'options'); ?>
 				<ul>
-					<li><a href="#home" class="is-active">Home</a></li>
-					<li><a href="#program">Program</a></li>
-					<li><a href="#venue">Venue</a></li>
-					<li><a href="#faqs">FAQs</a></li>
-					<li><a href="#registry">Registry</a></li>
-					<li><a href="#form"><?php echo $form['title']; ?></a></li>
+					<li data-animation="fade-in-up"><a href="#home" class="is-active">Home</a></li>
+					<li data-animation="fade-in-up" data-animation-delay="100"><a href="#program">Program</a></li>
+					<li data-animation="fade-in-up" data-animation-delay="200"><a href="#venue">Venue</a></li>
+					<li data-animation="fade-in-up" data-animation-delay="300"><a href="#faqs">FAQs</a></li>
+					<li data-animation="fade-in-up" data-animation-delay="400"><a href="#registry">Registry</a></li>
+					<li data-animation="fade-in-up" data-animation-delay="500"><a href="#form"><?php echo $form['title']; ?></a></li>
 				</ul>
 			</nav>
 			<div class="header__overlay"></div>
 		</header>
 	  <main id="main">
+			<div id="particles-js" class="particles"></div>

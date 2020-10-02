@@ -30,12 +30,12 @@ img {
   height: auto;
 }
 
-.dot {
-  background-color: #fff;
+.particles {
   position: fixed;
-  border-radius: 50%;
-  width: 5px;
-  height: 5px;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   z-index: 100;
   pointer-events: none;
 }

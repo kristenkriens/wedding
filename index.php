@@ -21,14 +21,14 @@
       <div class="column small-12">
         <?php $couple = get_field('couple', 'options'); ?>
         <h1>
-          <?php echo $couple[0]['first_name']; ?>
-          <span>&</span>
-          <?php echo $couple[1]['first_name']; ?>
+          <span data-animation="fade-in-up-large" data-animation-delay="1000"><?php echo $couple[0]['first_name']; ?></span>
+          <span data-animation="fade-in-large" data-animation-delay="1500" class="ampersand">&</span>
+          <span data-animation="fade-in-up-large" data-animation-delay="2000"><?php echo $couple[1]['first_name']; ?></span>
         </h1>
         <?php $weddingDateTime = get_field('wedding_date_time', 'options'); ?>
         <?php if ($weddingDateTime): ?>
           <?php $weddingDate = date('F jS, Y', strtotime($weddingDateTime)); ?>
-          <div class="h2"><?php echo $weddingDate; ?></div>
+          <div data-animation="fade-in-large" data-animation-delay="3000" class="h2"><?php echo $weddingDate; ?></div>
         <?php endif; ?>
       </div>
     </div>
@@ -44,7 +44,7 @@
   	<div class="row">
   		<div class="colour-blocks__title bg-lightest-grey column small-12 large-4">
         <div class="title">
-          <h2>
+          <h2 data-animation="fade-in-up">
             <span class="h4">Days Until</span>
             The Wedding
           </h2>
@@ -52,20 +52,28 @@
       </div>
       <div class="colour-blocks__items column small-12 large-8">
         <div class="colour-blocks__item">
-          <span id="days" class="h2">0</span>
-          <span class="h3">Days</span>
+          <div data-animation="fade-in-up" data-animation-delay="200">
+            <span id="days" class="h2">0</span>
+            <span class="h3">Days</span>
+          </div>
         </div>
         <div class="colour-blocks__item">
-          <span id="hours" class="h2">0</span>
-          <span class="h3">Hours</span>
+          <div data-animation="fade-in-up" data-animation-delay="400">
+            <span id="hours" class="h2">0</span>
+            <span class="h3">Hours</span>
+          </div>
         </div>
         <div class="colour-blocks__item">
-          <span id="minutes" class="h2">0</span>
-          <span class="h3">Mins</span>
+          <div data-animation="fade-in-up" data-animation-delay="600">
+            <span id="minutes" class="h2">0</span>
+            <span class="h3">Mins</span>
+          </div>
         </div>
         <div class="colour-blocks__item">
-          <span id="seconds" class="h2">0</span>
-          <span class="h3">Secs</span>
+          <div data-animation="fade-in-up" data-animation-delay="800">
+            <span id="seconds" class="h2">0</span>
+            <span class="h3">Secs</span>
+          </div>
         </div>
       </div>
     </div>
@@ -81,23 +89,23 @@
   <section id="program" class="program">
     <div class="row">
       <div class="program__title column small-12">
-        <div class="title title--has-line title--centered">
+        <div data-animation="fade-in-up" class="title title--has-line title--centered">
           <h2><?php echo $programTitle; ?></h2>
           <?php if ($programSubtitle): ?>
-            <h3><?php echo $programSubtitle; ?></h3>
+            <h3 data-animation="fade-in-up" data-animation-delay="200"><?php echo $programSubtitle; ?></h3>
           <?php endif; ?>
         </div>
       </div>
     </div>
     <div class="row">
-      <div class="program__image column small-12 large-6">
+      <div data-animation="fade-in-large" data-animation-delay="400" class="program__image column small-12 large-6">
         <div class="has-white-outline">
           <?php echo get_lazy_image($programImage, '615x450'); ?>
         </div>
       </div>
-      <div class="program__items column small-12 large-6">
+      <div data-animation="fade-in-up" data-animation-delay="600" class="program__items column small-12 large-6">
         <?php foreach ($programItems as $item): ?>
-          <div class="program__item">
+          <div data-animation="fade-in-up" class="program__item">
             <div class="program__item__left">
               <span class="h4"><?php echo $item['time']; ?></span>
             </div>
@@ -126,19 +134,21 @@
   <section id="venue" class="venue bg-lightest-grey">
     <div class="row">
       <div class="venue__content column small-12 large-6">
-        <div class="title title--has-line">
+        <div data-animation="fade-in-up" class="title title--has-line">
           <h2><?php echo $venueTitle; ?></h2>
           <?php if ($venueSubtitle): ?>
-            <h3><?php echo $venueSubtitle; ?></h3>
+            <h3 data-animation="fade-in-up" data-animation-delay="200"><?php echo $venueSubtitle; ?></h3>
           <?php endif; ?>
         </div>
         <?php if ($venueContent): ?>
-          <div class="content"><?php echo $venueContent; ?></div>
+          <div data-animation="fade-in-up" data-animation-delay="<?php echo $venueSubtitle ? 400 : 200; ?>" class="content">
+            <?php echo $venueContent; ?>
+            <?php $button = $venueCTA; ?>
+            <?php include( locate_template( 'parts/components/button.php' ) ); ?>
+          </div>
         <?php endif; ?>
-        <?php $button = $venueCTA; ?>
-        <?php include( locate_template( 'parts/components/button.php' ) ); ?>
       </div>
-      <div class="venue__image column small-12 large-6">
+      <div data-animation="fade-in-large" data-animation-delay="<?php echo $venueContent ? ($venueSubtitle ? 600 : 400) : 200; ?>" class="venue__image column small-12 large-6">
         <div class="full-right has-background-image has-white-outline">
           <?php echo get_lazy_image($venueImage, '1000x750f'); ?>
         </div>
@@ -155,17 +165,18 @@
   <section id="faqs" class="faqs">
     <div class="row">
       <div class="column">
-        <div class="card card--outlined">
-          <div class="title title--has-line title--centered">
+        <div data-animation="fade-in-up" class="card card--outlined">
+          <div data-animation="fade-in-up" data-animation-delay="200" class="title title--has-line title--centered">
             <h2><?php echo $faqsTitle; ?></h2>
             <?php if ($faqsSubtitle): ?>
-              <h3><?php echo $faqsSubtitle; ?></h3>
+              <h3 data-animation="fade-in-up" data-animation-delay="400"><?php echo $faqsSubtitle; ?></h3>
             <?php endif; ?>
           </div>
-          <div class="faqs__items">
+          <div data-animation="fade-in-up" data-animation-delay="<?php echo $faqsSubtitle ? 600 : 400; ?>" class="faqs__items">
             <?php foreach ($faqsItems as $index => $item): ?>
-              <div class="faqs__item">
-                <button class="h3"><?php echo $item['question']; ?></button>
+              <div data-animation="fade-in-up" class="faqs__item">
+                <button class="h3 question"><?php echo $item['question']; ?></button>
+                <div class="h3 question"><?php echo $item['question']; ?></div>
                 <div class="content">
                   <?php echo $item['answer']; ?>
                 </div>
@@ -185,14 +196,12 @@
   <section id="registry" class="registry colour-blocks">
   	<div class="row">
   		<div class="colour-blocks__title bg-lightest-grey column small-12 large-4">
-        <div class="title">
-          <h2><?php echo $registryTitle; ?></h2>
-        </div>
+        <h2 data-animation="fade-in-up"><?php echo $registryTitle; ?></h2>
       </div>
       <div class="colour-blocks__items column small-12 large-8">
-        <?php foreach ($registryItems as $item): ?>
+        <?php foreach ($registryItems as $index => $item): ?>
           <div class="colour-blocks__item">
-            <a href="<?php echo $item['link']; ?>" target="_blank">
+            <a data-animation="fade-in-up" data-animation-delay="<?php echo 200 + ($index * 200); ?>" href="<?php echo $item['link']; ?>" target="_blank">
               <?php echo get_lazy_image($item['logo'], '400x250f'); ?>
             </a>
           </div>
@@ -211,17 +220,19 @@
   <section id="form" class="form bg-accent-4">
     <div class="row">
       <div class="column">
-        <div class="card">
-          <div class="title title--has-line title--centered">
+        <div data-animation="fade-in-up" class="card">
+          <div data-animation="fade-in-up" data-animation-delay="200" class="title title--has-line title--centered">
             <h2><?php echo $formTitle ?></h2>
             <?php if ($formSubtitle): ?>
-              <h3><?php echo $formSubtitle; ?></h3>
+              <h3 data-animation="fade-in-up" data-animation-delay="400"><?php echo $formSubtitle; ?></h3>
             <?php endif; ?>
           </div>
           <?php if ($formContent): ?>
-            <div class="content"><?php echo $formContent; ?></div>
+            <div data-animation="fade-in-up" data-animation-delay="<?php echo $formSubtitle ? 600 : 400; ?>" class="content"><?php echo $formContent; ?></div>
           <?php endif; ?>
-          <?php echo do_shortcode('[fluentform id="' . $formId . '"]'); ?>
+          <div data-animation="fade-in-up" data-animation-delay="<?php echo $formContent ? ($formSubtitle ? 800 : 600) : 400; ?>">
+            <?php echo do_shortcode('[fluentform id="' . $formId . '"]'); ?>
+          </div>
         </div>
       </div>
     </div>

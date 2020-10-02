@@ -173,21 +173,104 @@
     });
   }
 
-  function freshDot() {
-    this.obj = document.createElement('div');
-    this.obj.classList.add('dot');
-    this.obj.style.top = (window.innerHeight * Math.random()) + 'px';
-    this.obj.style.left = (window.innerWidth * Math.random()) + 'px';
-
-    document.body.appendChild(this.obj);
+  function particles() {
+    particlesJS('particles-js', {
+      'particles': {
+        'number': {
+          'value': 75,
+          'density': false
+        },
+        'color': {
+          'value': '#ffffff'
+        },
+        'opacity': {
+          'value': 0.85,
+          'random': false,
+          'anim': false
+        },
+        'size': {
+          'value': 5,
+          'random': {
+            'enable': true,
+            'minimumValue': 2.5
+          },
+          'anim': false
+        },
+        'line_linked': {
+          'enable': false
+        },
+        'move': {
+          'enable': true,
+          'speed': 0.15,
+          'direction': 'bottom',
+          'random': false,
+          'straight': false,
+          'out_mode': 'out',
+          'bounce': false,
+          'attract': false
+        }
+      },
+      'interactivity': {
+        'detect_on': 'window',
+        'events': {
+          'onhover': {
+            'enable': true,
+            'mode': 'repulse'
+          },
+          'resize': true
+        },
+        'modes': {
+          'repulse': {
+            'distance': 50,
+            'duration': 1
+          }
+        }
+      },
+      'retina_detect': true
+    });
   }
 
-  function createDots() {
-    var dot = [];
-    for(var i = 0; i < 35; i++ ){
-      dot.push(new freshDot());
+  function animations() {
+    if($('.content').length) {
+      $('.content > p, .content > ul li, .content > ol li').each(function() {
+        $(this).attr('data-animation', 'fade-in-up');
+      });
+    }
+
+    if($('[data-animation]').length) {
+      // If Intersection Observer is not supported
+      if (!'IntersectionObserver' in window && !'IntersectionObserverEntry' in window && !'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+        $('[data-animation]').addClass('is-visible');
+      }
+
+    	// If Internet Explorer
+    	if(navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > -1) {
+    		$('[data-animation]').addClass('is-visible');
+    	}
+
+      setTimeout(function() {
+        var elements = document.querySelectorAll('[data-animation]');
+
+        var options = {
+          rootMargin: '-50px 0px -50px 0px',
+          threshold: 0
+        };
+
+        var observer = new IntersectionObserver(function(entries) {
+  				for(var i = 0; i < entries.length; i++) {
+  					if(entries[i].isIntersecting) {
+              entries[i].target.classList.add('is-visible');
+            }
+  				}
+        }, options);
+
+  			for(var i = 0; i < elements.length; i++) {
+  				observer.observe(elements[i]);
+  			}
+      }, 50);
     }
   }
+
 
   $(document).ready(function($) {
     // Init document ready functions
@@ -201,7 +284,8 @@
     heroSlider();
     countdown();
     toggleFAQ();
-    createDots();
+    particles();
+    animations();
   });
 
   $(window).on('load', function() {
