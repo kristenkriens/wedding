@@ -16,13 +16,16 @@ body {
   font-size: 14px;
   line-height: 22px;
   font-weight: 300;
-  overflow-x: hidden;
   opacity: 0;
   transition: 1500ms opacity;
 
   &.ready {
     opacity: 1;
   }
+}
+
+main {
+  overflow-x: hidden;
 }
 
 img {

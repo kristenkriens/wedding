@@ -21,8 +21,8 @@
       <div class="column small-12">
         <?php $couple = get_field('couple', 'options'); ?>
         <h1>
-          <span data-animation="fade-in-up-large" data-animation-delay="1000"><?php echo $couple[0]['first_name']; ?></span>
-          <span data-animation="fade-in-large" data-animation-delay="1500" class="ampersand">&</span>
+          <span data-animation="fade-in-up-large" data-animation-delay="800"><?php echo $couple[0]['first_name']; ?></span>
+          <span data-animation="fade-in-large" data-animation-delay="1300" class="ampersand">&</span>
           <span data-animation="fade-in-up-large" data-animation-delay="2000"><?php echo $couple[1]['first_name']; ?></span>
         </h1>
         <?php $weddingDateTime = get_field('wedding_date_time', 'options'); ?>

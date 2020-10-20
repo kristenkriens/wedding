@@ -177,7 +177,7 @@
     particlesJS('particles-js', {
       'particles': {
         'number': {
-          'value': 75,
+          'value': checkIfAboveViewportWidth(768) ? 75 : 50,
           'density': false
         },
         'color': {
@@ -252,7 +252,7 @@
         var elements = document.querySelectorAll('[data-animation]');
 
         var options = {
-          rootMargin: '-50px 0px -50px 0px',
+          rootMargin: '0px',
           threshold: 0
         };
 

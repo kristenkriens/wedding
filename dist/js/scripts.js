@@ -177,7 +177,7 @@
     particlesJS('particles-js', {
       'particles': {
         'number': {
-          'value': 75,
+          'value': checkIfAboveViewportWidth(768) ? 75 : 50,
           'density': false
         },
         'color': {
@@ -233,12 +233,6 @@
   function animations() {
     if($('.content').length) {
       $('.content > p, .content > ul li, .content > ol li').each(function() {
-        $(this).attr('data-animation', 'fade-in-up');
-      });
-    }
-
-    if($('form').length) {
-      $('form .ff_submit_btn_wrapper').each(function() {
         $(this).attr('data-animation', 'fade-in-up');
       });
     }
